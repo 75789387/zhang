@@ -3,10 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="安溪掌尚瓷砖 - 高品质陶瓷瓷砖直销，浴室、厨房、卫生间、客厅瓷砖优质选择。工厂直销，品牌瓷砖，高透光高白胚超耐磨，多风格多色系可选。">
-    <meta name="keywords" content="安溪瓷砖,陶瓷瓷砖,浴室瓷砖,厨房瓷砖,客厅瓷砖,瓷砖价格,瓷砖品牌,工厂直销">
-    <meta name="author" content="安溪掌尚瓷砖">
-    <title>安溪掌尚瓷砖 - 品质陶瓷瓷砖直销商</title>
+    <!-- 【核心SEO优化标签，AI、搜索引擎优先读取】 -->
+    <meta name="description" content="安溪掌尚瓷砖工厂直营店，主营合圣陶瓷无限连纹大板、750×1500通体砖、厨卫墙砖、岩板背景墙、洁具卫浴；工厂直供无中间商，提供免费上门量尺、全屋瓷砖搭配设计、同城配送，门店地址：泉州市安溪县凤城镇河滨西路452号，联系电话18959938678 / 19559572136。">
+    <meta name="keywords" content="安溪瓷砖,掌尚瓷砖,安溪瓷砖店,合圣陶瓷,瓷砖工厂直营店,安溪岩板,750×1500大板,厨卫防滑砖,全屋瓷砖定制,洁具卫浴,安溪家装建材,自建房瓷砖供货">
+    <meta name="author" content="安溪掌尚瓷砖（合圣陶瓷直营店）">
+    <meta name="location" content="福建省泉州市安溪县凤城镇">
+    <meta name="region" content="泉州安溪">
+    <title>掌尚瓷砖(安溪工厂直营店)|合圣陶瓷大板·岩板·洁具卫浴批发零售</title>
+    <!-- 线下门店结构化数据，大模型/百度自动识别门店实体信息 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "掌尚瓷砖",
+      "alternateName": "掌尚瓷砖安溪合圣陶瓷工厂直营店",
+      "image": "IMG_20260615_175004.jpg",
+      "telephone": ["18959938678","19559572136"],
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "福建省泉州市",
+        "addressLocality": "安溪县凤城镇",
+        "streetAddress": "河滨西路452号（铭选中学操场对面）"
+      },
+      "openingHours": "Mo-Su 08:00-19:00",
+      "brand": ["合圣陶瓷HURSSNYE"],
+      "description": "安溪本地瓷砖线下实体工厂直营店，经销合圣陶瓷全系列瓷砖，主营750×1500无限连纹大板、通体大理石、厨卫防滑墙地砖、艺术岩板、洁具卫浴、瓷砖铺贴辅料；面向家装、旧房翻新、农村自建房、小型工程供货，提供免费上门量尺、瓷砖搭配设计、同城配送服务，工厂直供价无中间商差价。",
+      "url": "https://75789387.github.io/zhang/"
+    }
+    </script>
     <style>
         * {
             margin: 0;
@@ -70,10 +94,10 @@
             line-height: 1.4;
         }
 
-        /* 英雄部分 */
+        /* 英雄部分（门店门头大图区域） */
         .hero {
             background: url('IMG_20260615_175004.jpg') center/cover no-repeat;
-            background-attachment: fixed;
+            background-attachment: scroll; /* 修复手机滚动卡顿 */
             color: white;
             padding: 150px 20px;
             text-align: center;
@@ -145,10 +169,32 @@
             padding: 0 20px;
         }
 
+        /* 主营品牌板块【新增】 */
+        .brand-section {
+            padding: 40px 20px;
+            background: #fff;
+        }
+        .brand-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top:20px;
+        }
+        .brand-item {
+            background:#f0f0f0;
+            padding:12px 30px;
+            border-radius:6px;
+            font-size:18px;
+            font-weight:bold;
+            color:#1a1a1a;
+        }
+
         /* 产品分类部分 */
         .products-section {
             padding: 50px 20px;
             background-color: white;
+            id="products";
         }
 
         .section-title {
@@ -235,8 +281,8 @@
             line-height: 1.5;
         }
 
-        .product-percentage {
-            font-size: 24px;
+        .product-spec {
+            font-size: 16px;
             color: #d4af37;
             font-weight: bold;
         }
@@ -316,6 +362,7 @@
         .cases-section {
             padding: 50px 20px;
             background-color: white;
+            id="cases";
         }
 
         .cases-grid {
@@ -467,6 +514,7 @@
             padding: 50px 20px;
             background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
             color: white;
+            id="contact";
         }
 
         .contact-content {
@@ -576,7 +624,7 @@
             z-index: 10;
         }
 
-        /* 响应式设计 */
+        /* 响应式手机适配 */
         @media (max-width: 768px) {
             header {
                 padding: 8px 15px;
@@ -662,7 +710,6 @@
             .hero {
                 padding: 80px 15px;
                 min-height: 300px;
-                background-attachment: scroll;
             }
 
             .hero h1 {
@@ -673,6 +720,7 @@
                 font-size: 13px;
             }
 
+            .brand-section,
             .products-section,
             .features-section,
             .advantages-section,
@@ -697,84 +745,97 @@
         }
     </style>
 </head>
-<body>
+<body id="home">
     <!-- 头部导航 -->
     <header>
         <div class="header-container">
-            <a href="#" class="logo">
-                <img src="logo.jpg" alt="掌尚瓷砖" class="logo-img">
+            <a href="#home" class="logo">
+                <img src="logo.jpg" alt="掌尚瓷砖 合圣陶瓷安溪直营店" class="logo-img">
                 <span class="logo-text">掌尚瓷砖</span>
             </a>
             <div class="contact-info">
                 <p>📞 电话: 18959938678 / 19559572136</p>
-                <p>📍 地址: 泉州市安溪县凤城镇河滨西路452号</p>
+                <p>📍 地址: 泉州市安溪县凤城镇河滨西路452号（铭选中学对面）</p>
             </div>
         </div>
     </header>
 
-    <!-- 英雄部分 -->
+    <!-- 门店门头大图区 -->
     <section class="hero">
         <div class="hero-content">
-            <h1>高品质陶瓷瓷砖直销</h1>
-            <p>工厂直销品牌瓷砖 | 高透光 高白胚 超耐磨 | 多风格多色系可选</p>
-            <a href="#contact" class="cta-button">立即联系我们</a>
+            <h1>掌尚瓷砖·安溪合圣陶瓷工厂直营店</h1>
+            <p>工厂直供品牌瓷砖 | 750×1500无限连纹大板 | 岩板·洁具卫浴一站式采购 | 免费上门量尺设计</p>
+            <a href="#contact" class="cta-button">立即联系到店咨询</a>
         </div>
     </section>
 
-    <!-- 产品分类部分 -->
-    <section class="products-section">
+    <!-- 【新增】主营合作品牌板块 -->
+    <section class="brand-section">
         <div class="container">
-            <h2 class="section-title">产品展示</h2>
+            <h2 class="section-title">主营合作品牌</h2>
+            <div class="brand-list">
+                <div class="brand-item">合圣陶瓷 HURSSNYE</div>
+                <div class="brand-item">无限连纹大板系列</div>
+                <div class="brand-item">全屋定制岩板</div>
+                <div class="brand-item">配套洁具卫浴</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品分类展示 -->
+    <section class="products-section" id="products">
+        <div class="container">
+            <h2 class="section-title">瓷砖产品图库</h2>
             <div class="products-grid">
                 <!-- 浴室瓷砖 -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="https://img0.baidu.com/it/u=1246791789,2264391350&fm=253&app=138&f=JPEG?w=800&h=1067" alt="浴室瓷砖">
+                        <img src="https://img0.baidu.com/it/u=1246791789,2264391350&fm=253&app=138&f=JPEG?w=800&h=1067" alt="安溪浴室防滑瓷砖 卫生间墙地砖">
                     </div>
                     <div class="product-info">
-                        <div class="product-category">浴室</div>
-                        <div class="product-name">浴室瓷砖</div>
-                        <div class="product-description">防水防滑设计，适合浴室、洗手间等潮湿环境，安全舒适。</div>
-                        <div class="product-percentage">30%</div>
+                        <div class="product-category">厨卫系列</div>
+                        <div class="product-name">浴室防滑墙地砖</div>
+                        <div class="product-description">防水防滑釉面，潮湿空间专用，多种纹理色系，家装卫生间首选。</div>
+                        <div class="product-spec">300×600 / 400×800规格齐全</div>
                     </div>
                 </div>
 
                 <!-- 厨房瓷砖 -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="https://pic.oceano.com.cn/h5filesystem/render/id297AAC4447D816D3B96B1C2397BB32/output.jpg?x-oss-process=image/resize,m_lfit,w_1298" alt="厨房瓷砖">
+                        <img src="https://pic.oceano.com.cn/h5filesystem/render/id297AAC4447D816D3B96B1C2397BB32/output.jpg?x-oss-process=image/resize,m_lfit,w_1298" alt="安溪厨房易清洁瓷砖 防油污墙砖">
                     </div>
                     <div class="product-info">
-                        <div class="product-category">厨房</div>
-                        <div class="product-name">厨房瓷砖</div>
-                        <div class="product-description">易清洁易打理，油污不易渗透，耐高温，是现代厨房的首选。</div>
-                        <div class="product-percentage">32%</div>
+                        <div class="product-category">厨卫系列</div>
+                        <div class="product-name">厨房防油污瓷砖</div>
+                        <div class="product-description">高密度瓷质，油污一擦即净，耐高温耐酸碱，适配现代橱柜装修。</div>
+                        <div class="product-spec">柔光/亮光双款式可选</div>
                     </div>
                 </div>
 
-                <!-- 卫生间瓷砖 -->
+                <!-- 通体大板 -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="https://pic.rmb.bdstatic.com/bjh/bb81964462f/241110/5883a6178955f149c8f1b0169dfa033a.jpeg" alt="卫生间瓷砖">
+                        <img src="https://pic.rmb.bdstatic.com/bjh/bb81964462f/241110/5883a6178955f149c8f1b0169dfa033a.jpeg" alt="安溪750×1500无限连纹大板瓷砖">
                     </div>
                     <div class="product-info">
-                        <div class="product-category">卫生间</div>
-                        <div class="product-name">卫生间瓷砖</div>
-                        <div class="product-description">防潮防水，抗污性强，多种颜色选择，打造舒适卫生空间。</div>
-                        <div class="product-percentage">34%</div>
+                        <div class="product-category">客厅地面</div>
+                        <div class="product-name">750×1500通体大板</div>
+                        <div class="product-description">合圣陶瓷无限连纹工艺，全屋通铺无断点，高白胚超耐磨，自建房/大平层专用。</div>
+                        <div class="product-spec">750×1500mm主流大板</div>
                     </div>
                 </div>
 
-                <!-- 客厅瓷砖 -->
+                <!-- 客厅通体砖 -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="https://img2.baidu.com/it/u=2129227457,3549102030&fm=253&app=138&f=JPEG?w=800&h=1067" alt="客厅瓷砖">
+                        <img src="https://img2.baidu.com/it/u=2129227457,3549102030&fm=253&app=138&f=JPEG?w=800&h=1067" alt="安溪客厅通体大理石瓷砖 家装地面砖">
                     </div>
                     <div class="product-info">
-                        <div class="product-category">客厅</div>
-                        <div class="product-name">客厅瓷砖</div>
-                        <div class="product-description">高端大气，耐磨耐压，纹理精美，彰显家居品味与格调。</div>
-                        <div class="product-percentage">36%</div>
+                        <div class="product-category">客厅地面</div>
+                        <div class="product-name">通体大理石瓷砖</div>
+                        <div class="product-description">高端仿大理石纹理，硬度高抗压耐磨，适合客厅、卧室全屋通铺。</div>
+                        <div class="product-spec">800×800常规通体砖</div>
                     </div>
                 </div>
             </div>
@@ -784,59 +845,59 @@
     <!-- 产品特性部分 -->
     <section class="features-section">
         <div class="container">
-            <h2 class="section-title">产品特性</h2>
+            <h2 class="section-title">瓷砖核心优势</h2>
             <div class="features-grid">
                 <div class="feature-item">
                     <div class="feature-icon">✨</div>
-                    <div class="feature-title">高透光</div>
-                    <div class="feature-text">采用先进工艺，光线透过率高，展现瓷砖的自然美感。</div>
+                    <div class="feature-title">高透光瓷胚</div>
+                    <div class="feature-text">高温煅烧致密白胚，透光均匀，纹理质感细腻高级。</div>
                 </div>
                 <div class="feature-item">
                     <div class="feature-icon">🎨</div>
-                    <div class="feature-title">高白胚</div>
-                    <div class="feature-text">精选优质白胚原料，色泽纯正，质量稳定可靠。</div>
+                    <div class="feature-title">高纯度白料</div>
+                    <div class="feature-text">精选优质高岭土原料，色泽纯净不发灰，品质稳定。</div>
                 </div>
                 <div class="feature-item">
                     <div class="feature-icon">💪</div>
-                    <div class="feature-title">超耐磨</div>
-                    <div class="feature-text">强化表面处理，耐磨性能出众，使用寿命长。</div>
+                    <div class="feature-title">超耐磨釉面</div>
+                    <div class="feature-text">加厚耐磨釉层，家具拖拽、行人走动不易刮花。</div>
                 </div>
                 <div class="feature-item">
                     <div class="feature-icon">🎭</div>
-                    <div class="feature-title">多风格</div>
-                    <div class="feature-text">丰富多样的设计风格，满足各类装修需求。</div>
+                    <div class="feature-title">全风格覆盖</div>
+                    <div class="feature-text">现代、轻奢、新中式、极简风格全覆盖，适配各类家装。</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 优势部分 -->
+    <!-- 门店服务优势 -->
     <section class="advantages-section">
         <div class="container">
             <div class="advantages-content">
-                <h2 class="section-title">为什么选择我们</h2>
+                <h2 class="section-title">为什么选择安溪掌尚瓷砖</h2>
                 <ul class="advantage-list">
-                    <li class="advantage-item">精品买单，做实价瓷家居 - 我们以最优价格为您提供优质产品</li>
-                    <li class="advantage-item">工厂直销 - 去除中间环节，确保最低价格</li>
-                    <li class="advantage-item">品牌保证 - 全部采用知名品牌瓷砖，质量有保证</li>
-                    <li class="advantage-item">高透光 高白胚 超耐磨 - 产品质量优异，使用寿命长</li>
-                    <li class="advantage-item">多风格多色系可选 - 满足不同的装修风格需求</li>
-                    <li class="advantage-item">专业咨询 - 提供专业的瓷砖选择和铺装建议</li>
-                    <li class="advantage-item">优惠价格 - 惊喜35元特价，让您轻松装修入住</li>
+                    <li class="advantage-item">合圣陶瓷工厂直营店，砍掉中间商差价，同等品质价格更低</li>
+                    <li class="advantage-item">全品类现货库存：大板、厨卫砖、岩板、洁具、铺贴辅料一站式配齐</li>
+                    <li class="advantage-item">免费上门实地量尺，专业设计师出具全屋瓷砖搭配铺贴方案</li>
+                    <li class="advantage-item">覆盖家装、旧房翻新、农村自建房、小型工装批量供货</li>
+                    <li class="advantage-item">同城免费配送上门，减少业主搬运损耗与额外开销</li>
+                    <li class="advantage-item">产品高透光、高白胚、超耐磨，长期使用不易发黄刮花</li>
+                    <li class="advantage-item">线下实体门店可实地看样，所见即所得，无网购色差风险</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- 完成案例部分 -->
-    <section class="cases-section">
+    <!-- 实景装修案例 -->
+    <section class="cases-section" id="cases">
         <div class="container">
-            <h2 class="section-title">完成案例</h2>
+            <h2 class="section-title">安溪本地完工实景案例</h2>
             <div class="cases-grid">
                 <!-- 案例1 -->
                 <div class="case-card">
                     <div class="case-gallery">
-                        <img class="gallery-img" src="https://via.placeholder.com/400x300?text=案例1-浴室瓷砖1" alt="案例1图片1">
+                        <img class="gallery-img" src="https://via.placeholder.com/400x300?text=安溪浴室装修实景案例" alt="安溪业主浴室瓷砖完工实景">
                         <div class="gallery-nav">
                             <button class="gallery-btn" onclick="prevImage(this)">❮</button>
                             <button class="gallery-btn" onclick="nextImage(this)">❯</button>
@@ -848,10 +909,10 @@
                         </div>
                     </div>
                     <div class="case-info">
-                        <h3 class="case-title">浴室装修案例</h3>
-                        <p class="case-description">高端浴室设计，采用防滑瓷砖，营造舒适洗浴空间。现代简约风格，完美诠释品质生活。</p>
+                        <h3 class="case-title">现代简约浴室装修案例</h3>
+                        <p class="case-description">安溪城区业主旧房翻新浴室，选用防滑柔光厨卫砖，干湿分离设计，整洁耐看。</p>
                         <div class="case-video" onclick="playVideo(this)">
-                            <img src="https://via.placeholder.com/400x200?text=案例1-视频" alt="案例1视频" style="width: 100%; border-radius: 5px;">
+                            <img src="https://via.placeholder.com/400x200?text=浴室案例实拍视频" alt="安溪浴室瓷砖实拍视频" style="width: 100%; border-radius: 5px;">
                             <div class="video-play-btn">▶</div>
                         </div>
                     </div>
@@ -860,7 +921,7 @@
                 <!-- 案例2 -->
                 <div class="case-card">
                     <div class="case-gallery">
-                        <img class="gallery-img" src="https://via.placeholder.com/400x300?text=案例2-厨房瓷砖1" alt="案例2图片1">
+                        <img class="gallery-img" src="https://via.placeholder.com/400x300?text=安溪厨房瓷砖实景案例" alt="安溪家装厨房瓷砖完工实拍">
                         <div class="gallery-nav">
                             <button class="gallery-btn" onclick="prevImage(this)">❮</button>
                             <button class="gallery-btn" onclick="nextImage(this)">❯</button>
@@ -872,10 +933,10 @@
                         </div>
                     </div>
                     <div class="case-info">
-                        <h3 class="case-title">厨房装修案例</h3>
-                        <p class="case-description">精致厨房设计，易清洁瓷砖铺装，提升烹饪体验。搭配现代家电，打造实用厨房空间。</p>
+                        <h3 class="case-title">极简风厨房完工案例</h3>
+                        <p class="case-description">凤城镇自建房厨房，浅色系防油污墙砖，搭配定制橱柜，打理简单美观。</p>
                         <div class="case-video" onclick="playVideo(this)">
-                            <img src="https://via.placeholder.com/400x200?text=案例2-视频" alt="案例2视频" style="width: 100%; border-radius: 5px;">
+                            <img src="https://via.placeholder.com/400x200?text=厨房实拍视频" alt="安溪厨房瓷砖实拍视频" style="width: 100%; border-radius: 5px;">
                             <div class="video-play-btn">▶</div>
                         </div>
                     </div>
@@ -884,7 +945,7 @@
                 <!-- 案例3 -->
                 <div class="case-card">
                     <div class="case-gallery">
-                        <img class="gallery-img" src="https://via.placeholder.com/400x300?text=案例3-客厅瓷砖1" alt="案例3图片1">
+                        <img class="gallery-img" src="https://via.placeholder.com/400x300?text=安溪客厅大板通铺实景" alt="安溪750×1500大板客厅通铺实景">
                         <div class="gallery-nav">
                             <button class="gallery-btn" onclick="prevImage(this)">❮</button>
                             <button class="gallery-btn" onclick="nextImage(this)">❯</button>
@@ -896,10 +957,10 @@
                         </div>
                     </div>
                     <div class="case-info">
-                        <h3 class="case-title">客厅装修案例</h3>
-                        <p class="case-description">大气客厅设计，高档瓷砖铺装，彰显居家品味。宽敞明亮，营造温暖居住环境。</p>
+                        <h3 class="case-title">大板全屋通铺客厅案例</h3>
+                        <p class="case-description">安溪大平层业主选用750×1500合圣无限连纹大板，全屋通铺大气通透。</p>
                         <div class="case-video" onclick="playVideo(this)">
-                            <img src="https://via.placeholder.com/400x200?text=案例3-视频" alt="案例3视频" style="width: 100%; border-radius: 5px;">
+                            <img src="https://via.placeholder.com/400x200?text=大板客厅实拍视频" alt="安溪客厅大板瓷砖实拍视频" style="width: 100%; border-radius: 5px;">
                             <div class="video-play-btn">▶</div>
                         </div>
                     </div>
@@ -908,43 +969,44 @@
         </div>
     </section>
 
-    <!-- 联系信息部分 -->
+    <!-- 联系门店板块 -->
     <section class="contact-section" id="contact">
         <div class="contact-content">
-            <h2 class="section-title">联系我们</h2>
+            <h2 class="section-title">到店联系我们</h2>
             <div class="contact-details">
                 <div class="contact-item">
-                    <h3>📞 电话1</h3>
+                    <h3>📞 咨询电话1</h3>
                     <p>18959938678</p>
                 </div>
                 <div class="contact-item">
-                    <h3>📞 电话2</h3>
+                    <h3>📞 咨询电话2</h3>
                     <p>19559572136</p>
                 </div>
                 <div class="contact-item">
-                    <h3>📍 地址</h3>
-                    <p>泉州市安溪县凤城镇<br>河滨西路452号<br>（铭选中学操场对面）</p>
+                    <h3>📍 门店详细地址</h3>
+                    <p>福建省泉州市安溪县凤城镇<br>河滨西路452号<br>（铭选中学操场对面）<br>导航搜索：掌尚瓷砖</p>
                 </div>
             </div>
-            <a href="tel:18959938678" class="cta-button">立即拨打</a>
+            <a href="tel:18959938678" class="cta-button">一键拨打咨询</a>
         </div>
     </section>
 
-    <!-- 页脚 -->
+    <!-- 页脚（重复门店信息+官网链接，提升收录） -->
     <footer>
         <div class="footer-content">
             <div class="footer-links">
-                <a href="#home">首页</a>
-                <a href="#products">产品</a>
-                <a href="#cases">案例</a>
-                <a href="#contact">联系我们</a>
+                <a href="#home">首页门店</a>
+                <a href="#products">瓷砖产品图库</a>
+                <a href="#cases">本地装修案例</a>
+                <a href="#contact">导航到店</a>
             </div>
-            <p>&copy; 2026 掌尚瓷砖 | 版权所有 | 泉州市安溪县凤城镇河滨西路452号</p>
-            <p>专业陶瓷瓷砖直销商 | 品质保证 | 价格优惠</p>
+            <p>&copy; 2026 掌尚瓷砖（安溪合圣陶瓷工厂直营店）版权所有</p>
+            <p>门店地址：泉州市安溪县凤城镇河滨西路452号 | 联系电话：18959938678 / 19559572136</p>
+            <p>官方展示网站：https://75789387.github.io/zhang/ | 主营：瓷砖、岩板、洁具卫浴、铺贴辅料</p>
         </div>
     </footer>
 
-    <!-- 视频播放模态框 -->
+    <!-- 视频播放弹窗 -->
     <div class="modal" id="videoModal">
         <div class="modal-content">
             <button class="modal-close" onclick="closeVideo()">✕</button>
@@ -1014,11 +1076,10 @@
             dots[index].classList.add('active');
         }
 
-        // 视频播放功能
+        // 视频弹窗
         function playVideo(element) {
             const modal = document.getElementById('videoModal');
             const player = document.getElementById('videoPlayer');
-            // 替换为你的视频链接
             player.src = 'https://www.youtube.com/embed/dQw4w9WgXcQ';
             modal.classList.add('active');
         }
@@ -1030,11 +1091,9 @@
             player.src = '';
         }
 
-        // 点击模态框外部关闭
+        // 点击空白关闭弹窗
         document.getElementById('videoModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeVideo();
-            }
+            if (e.target === this) closeVideo();
         });
     </script>
 </body>
