@@ -25,7 +25,7 @@
         header {
             background-color: #1a1a1a;
             color: white;
-            padding: 15px 20px;
+            padding: 10px 20px;
             position: sticky;
             top: 0;
             z-index: 100;
@@ -41,18 +41,33 @@
         }
 
         .logo {
-            font-size: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-size: 20px;
             font-weight: bold;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
+            color: white;
         }
 
         .contact-info {
-            font-size: 14px;
+            font-size: 13px;
             text-align: right;
         }
 
         .contact-info p {
             margin: 3px 0;
+            line-height: 1.4;
         }
 
         /* 英雄部分 */
@@ -563,18 +578,26 @@
 
         /* 响应式设计 */
         @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-                gap: 10px;
+            header {
+                padding: 8px 15px;
             }
 
-            .logo {
-                font-size: 20px;
+            .header-container {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .logo-img {
+                height: 40px;
+            }
+
+            .logo-text {
+                font-size: 16px;
             }
 
             .contact-info {
                 text-align: center;
-                font-size: 12px;
+                font-size: 11px;
             }
 
             .hero {
@@ -628,8 +651,12 @@
         }
 
         @media (max-width: 480px) {
-            .logo {
-                font-size: 18px;
+            .logo-img {
+                height: 35px;
+            }
+
+            .logo-text {
+                font-size: 14px;
             }
 
             .hero {
@@ -674,7 +701,10 @@
     <!-- 头部导航 -->
     <header>
         <div class="header-container">
-            <div class="logo">掌尚瓷砖</div>
+            <a href="#" class="logo">
+                <img src="logo.jpg" alt="掌尚瓷砖" class="logo-img">
+                <span class="logo-text">掌尚瓷砖</span>
+            </a>
             <div class="contact-info">
                 <p>📞 电话: 18959938678 / 19559572136</p>
                 <p>📍 地址: 泉州市安溪县凤城镇河滨西路452号</p>
