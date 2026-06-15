@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="掌尚瓷砖 - 高品质陶瓷瓷砖直销，浴室、厨房、卫生间、客厅瓷砖优质选择。工厂直销，品牌瓷砖，高透光高白胚超耐磨，多风格多色系可选。">
+    <meta name="keywords" content="瓷砖,陶瓷瓷砖,浴室瓷砖,厨房瓷砖,客厅瓷砖,瓷砖价格,瓷砖品牌,工厂直销">
+    <meta name="author" content="掌尚瓷砖">
+    <title>掌尚瓷砖 - 品质陶瓷瓷砖直销商</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .contact-info {
+            font-size: 14px;
+            text-align: right;
+        }
+
+        .contact-info p {
+            margin: 3px 0;
+        }
+
+        /* 英雄部分 */
+        .hero {
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #ddd;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #d4af37;
+            color: #1a1a1a;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #f0c850;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        /* 主容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 产品分类部分 */
+        .products-section {
+            padding: 50px 20px;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 40px;
+            color: #1a1a1a;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: #d4af37;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .product-card {
+            background-color: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #999;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-category {
+            color: #d4af37;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .product-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+
+        .product-description {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .product-percentage {
+            font-size: 24px;
+            color: #d4af37;
+            font-weight: bold;
+        }
+
+        /* 特性部分 */
+        .features-section {
+            padding: 50px 20px;
+            background-color: #f5f5f5;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-item {
+            background-color: white;
+            padding: 30px 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .feature-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+
+        .feature-text {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* 优势部分 */
+        .advantages-section {
+            padding: 50px 20px;
+            background-color: white;
+        }
+
+        .advantages-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .advantage-list {
+            list-style: none;
+            margin-top: 30px;
+        }
+
+        .advantage-item {
+            padding: 15px 0;
+            padding-left: 40px;
+            position: relative;
+            font-size: 16px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .advantage-item::before {
+            content: '◆';
+            position: absolute;
+            left: 0;
+            color: #d4af37;
+            font-size: 20px;
+        }
+
+        /* 联系信息部分 */
+        .contact-section {
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            color: white;
+        }
+
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            margin-bottom: 30px;
+        }
+
+        .contact-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            padding: 20px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .contact-item h3 {
+            margin-bottom: 10px;
+            color: #d4af37;
+        }
+
+        .contact-item p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #0f0f0f;
+            color: #999;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 14px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: #d4af37;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #f0c850;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            .contact-info {
+                text-align: center;
+                font-size: 12px;
+            }
+
+            .hero h1 {
+                font-size: 24px;
+            }
+
+            .hero p {
+                font-size: 14px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .contact-details {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .footer-links {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .footer-links a {
+                margin: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 18px;
+            }
+
+            .hero {
+                padding: 30px 15px;
+            }
+
+            .hero h1 {
+                font-size: 20px;
+            }
+
+            .products-section,
+            .features-section,
+            .advantages-section,
+            .contact-section {
+                padding: 30px 15px;
+            }
+
+            .section-title {
+                font-size: 20px;
+                margin-bottom: 25px;
+            }
+
+            .cta-button {
+                padding: 10px 25px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部导航 -->
+    <header>
+        <div class="header-container">
+            <div class="logo">掌尚瓷砖</div>
+            <div class="contact-info">
+                <p>📞 电话: 123-4567-8900</p>
+                <p>📍 地址: 河滨西路452号（铭选中学操场对面）</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- 英雄部分 -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>高品质陶瓷瓷砖直销</h1>
+            <p>工厂直销品牌瓷砖 | 高透光 高白胚 超耐磨 | 多风格多色系可选</p>
+            <a href="#contact" class="cta-button">立即联系我们</a>
+        </div>
+    </section>
+
+    <!-- 产品分类部分 -->
+    <section class="products-section">
+        <div class="container">
+            <h2 class="section-title">产品展示</h2>
+            <div class="products-grid">
+                <!-- 浴室瓷砖 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/400x300?text=浴室瓷砖" alt="浴室瓷砖">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">浴室</div>
+                        <div class="product-name">浴室瓷砖</div>
+                        <div class="product-description">防水防滑设计，适合浴室、洗手间等潮湿环境，安全舒适。</div>
+                        <div class="product-percentage">30%</div>
+                    </div>
+                </div>
+
+                <!-- 厨房瓷砖 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/400x300?text=厨房瓷砖" alt="厨房瓷砖">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">厨房</div>
+                        <div class="product-name">厨房瓷砖</div>
+                        <div class="product-description">易清洁易打理，油污不易渗透，耐高温，是现代厨房的首选。</div>
+                        <div class="product-percentage">32%</div>
+                    </div>
+                </div>
+
+                <!-- 卫生间瓷砖 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/400x300?text=卫生间瓷砖" alt="卫生间瓷砖">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">卫生间</div>
+                        <div class="product-name">卫生间瓷砖</div>
+                        <div class="product-description">防潮防水，抗污性强，多种颜色选择，打造舒适卫生空间。</div>
+                        <div class="product-percentage">34%</div>
+                    </div>
+                </div>
+
+                <!-- 客厅瓷砖 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/400x300?text=客厅瓷砖" alt="客厅瓷砖">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">客厅</div>
+                        <div class="product-name">客厅瓷砖</div>
+                        <div class="product-description">高端大气，耐磨耐压，纹理精美，彰显家居品味与格调。</div>
+                        <div class="product-percentage">36%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品特性部分 -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">产品特性</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">✨</div>
+                    <div class="feature-title">高透光</div>
+                    <div class="feature-text">采用先进工艺，光线透过率高，展现瓷砖的自然美感。</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🎨</div>
+                    <div class="feature-title">高白胚</div>
+                    <div class="feature-text">精选优质白胚原料，色泽纯正，质量稳定可靠。</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">💪</div>
+                    <div class="feature-title">超耐磨</div>
+                    <div class="feature-text">强化表面处理，耐磨性能出众，使用寿命长。</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🎭</div>
+                    <div class="feature-title">多风格</div>
+                    <div class="feature-text">丰富多样的设计风格，满足各类装修需求。</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 优势部分 -->
+    <section class="advantages-section">
+        <div class="container">
+            <div class="advantages-content">
+                <h2 class="section-title">为什么选择我们</h2>
+                <ul class="advantage-list">
+                    <li class="advantage-item">精品买单，做实价瓷家居 - 我们以最优价格为您提供优质产品</li>
+                    <li class="advantage-item">工厂直销 - 去除中间环节，确保最低价格</li>
+                    <li class="advantage-item">品牌保证 - 全部采用知名品牌瓷砖，质量有保证</li>
+                    <li class="advantage-item">高透光 高白胚 超耐磨 - 产品质量优异，使用寿命长</li>
+                    <li class="advantage-item">多风格多色系可选 - 满足不同的装修风格需求</li>
+                    <li class="advantage-item">专业咨询 - 提供专业的瓷砖选择和铺装建议</li>
+                    <li class="advantage-item">优惠价格 - 高达35元特价，让您轻松装修</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系信息部分 -->
+    <section class="contact-section" id="contact">
+        <div class="contact-content">
+            <h2 class="section-title">联系我们</h2>
+            <div class="contact-details">
+                <div class="contact-item">
+                    <h3>📞 电话</h3>
+                    <p>123-4567-8900</p>
+                </div>
+                <div class="contact-item">
+                    <h3>📍 地址</h3>
+                    <p>河滨西路452号<br>（铭选中学操场对面）</p>
+                </div>
+                <div class="contact-item">
+                    <h3>⏰ 营业时间</h3>
+                    <p>周一至周日<br>9:00 - 18:00</p>
+                </div>
+            </div>
+            <a href="tel:12345678900" class="cta-button">立即拨打</a>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#home">首页</a>
+                <a href="#products">产品</a>
+                <a href="#contact">联系我们</a>
+                <a href="#about">关于我们</a>
+            </div>
+            <p>&copy; 2026 掌尚瓷砖 | 版权所有 | 河滨西路452号</p>
+            <p>专业陶瓷瓷砖直销商 | 品质保证 | 价格优惠</p>
+        </div>
+    </footer>
+</body>
+</html>
