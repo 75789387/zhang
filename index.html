@@ -57,34 +57,56 @@
 
         /* 英雄部分 */
         .hero {
-            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            background: url('IMG_20260615_175004.jpg') center/cover no-repeat;
+            background-attachment: fixed;
             color: white;
-            padding: 40px 20px;
+            padding: 150px 20px;
             text-align: center;
+            position: relative;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
         }
 
         .hero-content {
             max-width: 1200px;
             margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
 
         .hero h1 {
-            font-size: 32px;
+            font-size: 48px;
             margin-bottom: 15px;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            font-weight: 700;
         }
 
         .hero p {
-            font-size: 16px;
-            margin-bottom: 20px;
-            color: #ddd;
+            font-size: 20px;
+            margin-bottom: 30px;
+            color: #f0f0f0;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
         }
 
         .cta-button {
             display: inline-block;
             background-color: #d4af37;
             color: #1a1a1a;
-            padding: 12px 30px;
+            padding: 14px 40px;
             border: none;
             border-radius: 5px;
             font-size: 16px;
@@ -92,12 +114,13 @@
             cursor: pointer;
             text-decoration: none;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
         }
 
         .cta-button:hover {
             background-color: #f0c850;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
         }
 
         /* 主容器 */
@@ -360,12 +383,19 @@
                 font-size: 12px;
             }
 
+            .hero {
+                padding: 100px 20px;
+                min-height: 350px;
+            }
+
             .hero h1 {
-                font-size: 24px;
+                font-size: 28px;
+                margin-bottom: 12px;
             }
 
             .hero p {
                 font-size: 14px;
+                margin-bottom: 20px;
             }
 
             .section-title {
@@ -404,11 +434,17 @@
             }
 
             .hero {
-                padding: 30px 15px;
+                padding: 80px 15px;
+                min-height: 300px;
+                background-attachment: scroll;
             }
 
             .hero h1 {
-                font-size: 20px;
+                font-size: 22px;
+            }
+
+            .hero p {
+                font-size: 13px;
             }
 
             .products-section,
@@ -424,7 +460,7 @@
             }
 
             .cta-button {
-                padding: 10px 25px;
+                padding: 12px 25px;
                 font-size: 14px;
             }
         }
