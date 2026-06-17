@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 适配GitHub Pages子目录基准路径，解决样式/图片404 -->
-    <base href="./">
     <meta name="description" content="安溪掌尚瓷砖工厂直营店，主营合圣陶瓷无限连纹大板、750×1500通体砖、厨卫墙砖、岩板背景墙、洁具卫浴；工厂直供无中间商，提供免费上门量尺、全屋瓷砖搭配设计、同城配送，门店地址：泉州市安溪县凤城镇河滨西路452号，联系电话18959938678 / 19559572136。">
     <meta name="keywords" content="安溪瓷砖,掌尚瓷砖,安溪瓷砖店,合圣陶瓷,瓷砖工厂直营店,安溪岩板,750×1500大板,厨卫防滑砖,全屋瓷砖定制,洁具卫浴,安溪家装建材,自建房瓷砖供货">
     <meta name="author" content="安溪掌尚瓷砖（合圣陶瓷直营店）">
@@ -93,7 +91,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0.5);
             z-index: 1;
         }
 
@@ -199,7 +197,7 @@
         }
 
         .product-card {
-            background-color: #f9f9;
+            background-color: #f9f9f9;
             border: 1px solid #e0e0e0;
             border-radius: 8px;
             overflow: hidden;
@@ -337,7 +335,7 @@
         }
 
         .case-card {
-            background-color: #f9f9;
+            background-color: #f9f9f9;
             border: 1px solid #e0e0e0;
             border-radius: 8px;
             overflow: hidden;
@@ -436,13 +434,23 @@
             max-width: 100%;
         }
 
+        /* 手机端优化 LOGO 已调好，不会超大挤压页面 */
         @media (max-width: 768px) {
             .header-container {
-                flex-direction: column;
-                gap: 8px;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                gap: 10px;
+            }
+            .logo-img {
+                height: 36px !important;
+            }
+            .logo-text {
+                font-size: 16px !important;
             }
             .contact-info {
-                text-align: center;
+                text-align: right;
+                font-size: 11px !important;
             }
             .hero h1 {
                 font-size: 28px;
@@ -458,6 +466,9 @@
                 flex-direction: column;
                 gap: 10px;
             }
+            header {
+                padding: 8px 15px !important;
+            }
         }
         @media (max-width: 480px) {
             .hero {
@@ -469,6 +480,12 @@
             }
             .section-title {
                 font-size: 20px;
+            }
+            .logo-img {
+                height: 32px !important;
+            }
+            .logo-text {
+                font-size: 14px !important;
             }
         }
     </style>
@@ -637,36 +654,35 @@
             </div>
             <p>&copy; 2026 掌尚瓷砖（安溪合圣陶瓷工厂直营店）版权所有</p>
             <p>门店地址：泉州市安溪县凤城镇河滨西路452号 | 联系电话：18959938678 / 19559572136</p>
-            <p>官方展示网站：https://75789387.github.io/zhang/ | 主营：瓷砖、岩板、洁具卫浴、铺贴辅料</p>
+            <p>官方展示网站：https://75789387.github.io/zhang/ | 后台源码管理地址：https://github.com/75789387/zhang | 主营：瓷砖、岩板、洁具卫浴、铺贴辅料</p>
         </div>
     </footer>
 
     <script>
-        // 简化轮播JS，无冗余失效代码
         function nextImage(btn) {
             const gallery = btn.closest('.case-gallery');
             const images = gallery.querySelectorAll('.gallery-img');
-            let current = 0;
+            let currentIndex = 0;
             images.forEach((img, idx) => {
-                if(img.style.display !== 'none') current = idx;
+                if(img.style.display !== 'none') currentIndex = idx;
             });
-            current = (current + 1) % images.length;
-            update(gallery, current);
+            currentIndex = (currentIndex + 1) % images.length;
+            updateGallery(gallery, currentIndex);
         }
         function prevImage(btn) {
             const gallery = btn.closest('.case-gallery');
             const images = gallery.querySelectorAll('.gallery-img');
-            let current = 0;
+            let currentIndex = 0;
             images.forEach((img, idx) => {
-                if(img.style.display !== 'none') current = idx;
+                if(img.style.display !== 'none') currentIndex = idx;
             });
-            current = (current - 1 + images.length) % images.length;
-            update(gallery, current);
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateGallery(gallery, currentIndex);
         }
-        function update(gallery, idx) {
-            const imgs = gallery.querySelectorAll('.gallery-img');
-            imgs.forEach(i=>i.style.display='none');
-            imgs[idx].style.display='block';
+        function updateGallery(gallery, index) {
+            const images = gallery.querySelectorAll('.gallery-img');
+            images.forEach(img => img.style.display = 'none');
+            images[index].style.display = 'block';
         }
     </script>
 </body>
