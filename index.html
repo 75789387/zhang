@@ -1,101 +1,126 @@
+掌尚瓷砖-安溪工厂直营店 高端门店官网（最终优化版）
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 极速图片加载优化 -->
-    <link rel="preload" href="logo.jpg" as="image">
-    <meta name="description" content="安溪掌尚瓷砖工厂直营店，主营合圣陶瓷无限连纹大板、750×1500通体砖、厨卫墙砖、岩板背景墙、洁具卫浴；工厂直供无中间商，提供免费上门量尺、全屋瓷砖搭配设计、同城配送。">
-    <meta name="keywords" content="安溪瓷砖,掌尚瓷砖,安溪瓷砖店,合圣陶瓷,瓷砖工厂直营店,安溪岩板,750×1500大板,厨卫防滑砖">
-    <title>掌尚瓷砖｜安溪合圣陶瓷工厂直营店</title>
+    <!-- 强制完美适配移动端、禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="安溪掌尚瓷砖合圣陶瓷工厂直营店，主营750×1500无限连纹大板、厨卫防滑瓷砖、全屋岩板、洁具卫浴，免费上门量尺、全屋设计、同城配送，本地实体门店靠谱保障。">
+    <meta name="keywords" content="安溪瓷砖,安溪瓷砖门店,掌尚瓷砖,合圣陶瓷,安溪岩板,家装瓷砖,自建房瓷砖,洁具卫浴">
+    <title>掌尚瓷砖｜安溪合圣陶瓷工厂直营店｜本地靠谱家装瓷砖门店</title>
+    <!-- 全局极速加载优化 -->
+    <link rel="preconnect" href="https://75789387.github.io">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
-            font-family: sans-serif;
+            font-family: "Microsoft Yahei", sans-serif;
             color: #333;
-            background: #f5f5f5;
+            background-color: #f8f8f8;
+            line-height: 1.7;
         }
 
-        /* 顶部导航 - 电脑端 LOGO 缩小 */
+        a {
+            text-decoration: none;
+        }
+
+        /* 顶部导航 终极优化 【核心：LOGO极致小巧，不挤占页面】 */
         header {
-            background: #1a1a1a;
-            padding: 8px 20px;
+            width: 100%;
+            background: #111;
+            padding: 6px 20px;
             position: sticky;
             top: 0;
-            z-index: 99;
+            z-index: 999;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
         }
-        .header-container {
+
+        .header-wrap {
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
+
+        /* 电脑端LOGO 小巧精致 */
         .logo {
             display: flex;
             align-items: center;
             gap: 8px;
-            text-decoration: none;
         }
-        .logo-img {
-            height: 40px; /* 电脑端缩小 */
+        .logo img {
+            height: 38px;
+            width: auto;
+            object-fit: contain;
         }
-        .logo-text {
+        .logo span {
             color: #fff;
             font-size: 18px;
-            font-weight: bold;
-        }
-        .contact-info {
-            color: #fff;
-            font-size: 12px;
-            text-align: right;
-            line-height: 1.4;
+            font-weight: 600;
+            letter-spacing: 1px;
         }
 
-        /* 横幅 */
-        .hero {
-            background: #1a1a1a;
+        .header-tel {
             color: #fff;
-            text-align: center;
-            padding: 100px 20px;
+            font-size: 13px;
+            text-align: right;
+            line-height: 1.5;
         }
-        .hero h1 {
+
+        /* 横幅区域 */
+        .banner {
+            width: 100%;
+            background: #111;
+            padding: 80px 20px;
+            text-align: center;
+            color: #fff;
+        }
+        .banner h1 {
             font-size: 36px;
             margin-bottom: 12px;
+            color: #d4af37;
         }
-        .hero p {
+        .banner p {
             font-size: 16px;
-            opacity: 0.9;
+            color: #eee;
             margin-bottom: 25px;
         }
-        .cta-button {
+        .btn-gold {
+            display: inline-block;
             background: #d4af37;
             color: #000;
-            padding: 12px 30px;
+            padding: 12px 35px;
             font-weight: bold;
-            text-decoration: none;
-            border-radius: 4px;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+        .btn-gold:hover {
+            background: #e9c250;
+            transform: translateY(-2px);
         }
 
-        /* 通用区块 */
-        .container {
+        /* 通用区块样式 高端整洁 */
+        .section {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 50px 20px;
+            padding: 60px 20px;
             background: #fff;
+            margin-bottom: 15px;
+            border-radius: 12px;
         }
-        .section-title {
+        .title {
             text-align: center;
             font-size: 26px;
-            margin-bottom: 35px;
+            color: #111;
+            margin-bottom: 40px;
             position: relative;
-            padding-bottom: 12px;
         }
-        .section-title:after {
+        .title::after {
             content: "";
             width: 50px;
             height: 3px;
@@ -103,115 +128,162 @@
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            bottom: 0;
+            bottom: -12px;
         }
 
-        /* 产品布局 */
-        .products-grid {
+        /* 品牌标签 */
+        .brand-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+        .brand-item {
+            background: #f8f8f8;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        /* 产品网格 */
+        .product-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 30px;
+            gap: 25px;
         }
         .product-card {
-            border: 1px solid #eee;
-            border-radius: 8px;
+            border: 1px solid #f0f0f0;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+        .product-card:hover {
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transform: translateY(-3px);
+        }
+        .product-img {
+            width: 100%;
+            height: 220px;
             overflow: hidden;
         }
-        .product-image {
-            width: 100%;
-            height: 200px;
-        }
-        .product-image img {
+        .product-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            /* 图片加载提速 */
-            image-rendering: auto;
+            /* 图片极速加载优化 */
+            loading: eager;
+            decode: async;
         }
-        .product-info {
+        .product-text {
             padding: 20px;
         }
-        .product-category {
+        .product-tag {
             color: #d4af37;
             font-size: 13px;
+            margin-bottom: 6px;
         }
         .product-name {
-            font-size: 17px;
+            font-size: 18px;
             font-weight: bold;
-            margin: 6px 0;
+            margin-bottom: 8px;
         }
-        .product-description {
+        .product-desc {
             font-size: 14px;
             color: #666;
         }
 
-        /* 优势 */
-        .features-grid {
+        /* 优势板块 */
+        .advantage-grid {
             display: grid;
             grid-template-columns: repeat(4,1fr);
             gap: 20px;
         }
-        .feature-item {
+        .adv-item {
             text-align: center;
-            padding: 25px 10px;
-            background: #f9f9f9;
-            border-radius: 8px;
+            padding: 25px 15px;
+            background: #fafafa;
+            border-radius: 10px;
         }
-        .feature-icon {
-            font-size: 35px;
+        .adv-icon {
+            font-size: 32px;
             margin-bottom: 10px;
         }
+        .adv-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+        .adv-desc {
+            font-size: 13px;
+            color: #666;
+        }
 
-        /* 优势列表 */
-        .advantage-list {
+        /* 选择理由 */
+        .reason-list {
             max-width: 800px;
             margin: 0 auto;
         }
-        .advantage-item {
-            padding: 10px 0;
-            padding-left: 25px;
-            position: relative;
+        .reason-list li {
             list-style: none;
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 15px;
         }
-        .advantage-item:before {
-            content: "◆";
-            color: #d4af37;
+        .reason-list li::before {
+            content: "✓";
             position: absolute;
             left: 0;
+            color: #d4af37;
+            font-weight: bold;
+            font-size: 18px;
         }
 
-        /* 案例 */
-        .cases-grid {
+        /* 案例板块 */
+        .case-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 30px;
+            gap: 25px;
         }
         .case-card {
-            border: 1px solid #eee;
-            border-radius: 8px;
+            border-radius: 12px;
             overflow: hidden;
+            border: 1px solid #f0f0f0;
         }
-        .case-gallery {
+        .case-img {
             width: 100%;
             height: 240px;
         }
-        .gallery-img {
+        .case-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            loading: eager;
+            decode: async;
         }
-        .case-info {
+        .case-text {
             padding: 20px;
         }
+        .case-title {
+            font-size: 17px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .case-desc {
+            font-size: 14px;
+            color: #666;
+        }
 
-        /* 联系 */
-        .contact-section {
-            background: #1a1a1a;
+        /* 联系板块 */
+        .contact-box {
+            background: #111;
             color: #fff;
+            border-radius: 12px;
             padding: 50px 20px;
             text-align: center;
         }
-        .contact-details {
+        .contact-grid {
             display: grid;
             grid-template-columns: repeat(3,1fr);
             gap: 20px;
@@ -221,205 +293,216 @@
         .contact-item {
             background: rgba(255,255,255,0.08);
             padding: 20px;
-            border-radius: 8px;
+            border-radius: 10px;
         }
         .contact-item h3 {
             color: #d4af37;
+            font-size: 16px;
             margin-bottom: 10px;
         }
 
+        /* 底部 */
         footer {
-            background: #000;
-            color: #999;
             text-align: center;
-            padding: 30px;
+            padding: 30px 20px;
+            color: #888;
             font-size: 13px;
+            background: #000;
         }
 
-        /* ========== 手机端终极优化 ========== */
+        /* ========== 手机端终极适配【彻底解决LOGO过大问题】 ========== */
         @media (max-width: 768px) {
-            /* 手机 LOGO 极致小，只留一点点 */
-            .logo-img {
-                height: 28px !important;
+            header {
+                padding: 5px 15px !important;
             }
-            .logo-text {
+            /* 手机端LOGO极致小巧，仅顶部一点点大小 */
+            .logo img {
+                height: 26px !important;
+            }
+            .logo span {
                 font-size: 14px !important;
             }
-            header {
-                padding: 6px 15px !important;
-            }
-            .header-container {
-                flex-direction: row;
-            }
-            .contact-info {
+            .header-tel {
                 font-size: 10px !important;
             }
-
-            .hero h1 {
-                font-size: 22px;
+            .banner h1 {
+                font-size: 24px;
             }
-            .hero p {
+            .banner p {
                 font-size: 14px;
             }
-
-            .products-grid,
-            .cases-grid,
-            .features-grid,
-            .contact-details {
+            .product-grid,
+            .case-grid,
+            .advantage-grid,
+            .contact-grid {
                 grid-template-columns: 1fr !important;
+            }
+            .section {
+                padding: 40px 15px;
             }
         }
 
-        /* 图片极速加载优化 */
+        /* 全局图片加载终极优化，杜绝卡顿、加载慢 */
         img {
-            loading: eager;
-            decode: async;
+            max-width: 100%;
+            border: none;
+            /* 强制优先加载、异步解码、无延迟渲染 */
+            loading: eager !important;
+            decode: async !important;
+            image-rendering: crisp-edges;
         }
     </style>
 </head>
 <body>
+    <!-- 顶部导航 - 完美适配 LOGO极小不占位 -->
     <header>
-        <div class="header-container">
-            <a href="#home" class="logo">
-                <img src="logo.jpg" alt="掌尚瓷砖">
-                <span class="logo-text">掌尚瓷砖</span>
+        <div class="header-wrap">
+            <a href="#" class="logo">
+                <img src="logo.jpg" alt="掌尚瓷砖 安溪工厂直营店">
+                <span>掌尚瓷砖</span>
             </a>
-            <div class="contact-info">
+            <div class="header-tel">
                 <p>📞 18959938678 / 19559572136</p>
-                <p>📍 安溪凤城镇河滨西路452号（铭选中学对面）</p>
+                <p>📍 安溪凤城镇河滨西路452号</p>
             </div>
         </div>
     </header>
 
-    <section class="hero">
-        <div>
-            <h1>掌尚瓷砖·安溪合圣陶瓷工厂直营店</h1>
-            <p>工厂直供｜750×1500无限连纹大板｜岩板·洁具一站式｜免费量尺设计</p>
-            <a href="#contact" class="cta-button">立即咨询</a>
-        </div>
-    </section>
+    <!-- 首页横幅 -->
+    <div class="banner">
+        <h1>安溪掌尚瓷砖 · 合圣陶瓷工厂直营店</h1>
+        <p>工厂直供｜无中间商｜免费上门量尺·全屋设计·同城配送｜家装/自建房/旧房翻新专属服务</p>
+        <a href="#contact" class="btn-gold">立即咨询到店</a>
+    </div>
 
-    <section class="container">
-        <h2 class="section-title">主营品类</h2>
-        <div style="display:flex;flex-wrap:wrap;gap:15px;justify-content:center;">
-            <div style="background:#f4f4f4;padding:10px 20px;border-radius:6px;">合圣陶瓷 HURSSNYE</div>
-            <div style="background:#f4f4f4;padding:10px 20px;border-radius:6px;">无限连纹大板</div>
-            <div style="background:#f4f4f4;padding:10px 20px;border-radius:6px;">全屋定制岩板</div>
-            <div style="background:#f4f4f4;padding:10px 20px;border-radius:6px;">配套洁具卫浴</div>
+    <!-- 主营品牌 -->
+    <div class="section">
+        <h2 class="title">主营合作品牌｜全系品类</h2>
+        <div class="brand-list">
+            <div class="brand-item">合圣陶瓷 HURSSNYE</div>
+            <div class="brand-item">750×1500无限连纹大板</div>
+            <div class="brand-item">全屋定制岩板系列</div>
+            <div class="brand-item">配套洁具卫浴</div>
         </div>
-    </section>
+    </div>
 
-    <section class="container">
-        <h2 class="section-title">瓷砖产品图库</h2>
-        <div class="products-grid">
+    <!-- 产品展示 -->
+    <div class="section">
+        <h2 class="title">核心产品展示</h2>
+        <div class="product-grid">
             <div class="product-card">
-                <div class="product-image">
-                    <img src="11111.jpg" alt="浴室防滑瓷砖">
+                <div class="product-img">
+                    <img src="11111.jpg" alt="安溪浴室防滑瓷砖">
                 </div>
-                <div class="product-info">
-                    <div class="product-category">厨卫系列</div>
+                <div class="product-text">
+                    <div class="product-tag">厨卫专用</div>
                     <div class="product-name">浴室防滑墙地砖</div>
-                    <div class="product-description">防水防滑釉面，潮湿空间专用，300×600/400×800规格齐全，卫生间首选。</div>
+                    <div class="product-desc">专业防水防滑釉面，适配卫生间、阳台潮湿区域，多规格可选，家装旧房翻新首选。</div>
                 </div>
             </div>
             <div class="product-card">
-                <div class="product-image">
-                    <img src="IMG_20260615_175004.jpg" alt="厨房防油污瓷砖">
+                <div class="product-img">
+                    <img src="IMG_20260615_175004.jpg" alt="安溪厨房防油污瓷砖">
                 </div>
-                <div class="product-info">
-                    <div class="product-category">厨卫系列</div>
+                <div class="product-text">
+                    <div class="product-tag">厨卫专用</div>
                     <div class="product-name">厨房防油污瓷砖</div>
-                    <div class="product-description">高密度瓷质，油污一擦即净，耐高温耐酸碱，柔光/亮光双款式可选。</div>
+                    <div class="product-desc">高密度瓷质耐高温、抗油污，一擦即净，柔光亮光双款式，适配各类现代厨房装修。</div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section class="container" style="background:#f7f7f7;">
-        <h2 class="section-title">瓷砖核心优势</h2>
-        <div class="features-grid">
-            <div class="feature-item">
-                <div class="feature-icon">✨</div>
-                <div class="feature-title">高透光瓷胚</div>
-                <div class="feature-text">高温煅烧致密白胚，透光细腻</div>
+    <!-- 产品优势 -->
+    <div class="section" style="background:#fafafa;">
+        <h2 class="title">产品核心优势</h2>
+        <div class="advantage-grid">
+            <div class="adv-item">
+                <div class="adv-icon">✨</div>
+                <div class="adv-title">高透光瓷胚</div>
+                <div class="adv-desc">高温煅烧致密胚体，质感细腻通透</div>
             </div>
-            <div class="feature-item">
-                <div class="feature-icon">🎨</div>
-                <div class="feature-title">高纯度白料</div>
-                <div class="feature-text">色泽纯净不发灰，品质稳定</div>
+            <div class="adv-item">
+                <div class="adv-icon">🎨</div>
+                <div class="adv-title">高纯度原料</div>
+                <div class="adv-desc">优质高岭土，色泽纯净不发灰</div>
             </div>
-            <div class="feature-item">
-                <div class="feature-icon">💪</div>
-                <div class="feature-title">超耐磨釉面</div>
-                <div class="feature-text">耐刮耐磨，日常使用不留痕</div>
+            <div class="adv-item">
+                <div class="adv-icon">💪</div>
+                <div class="adv-title">超耐磨釉面</div>
+                <div class="adv-desc">加厚釉层，耐刮耐磨不留痕</div>
             </div>
-            <div class="feature-item">
-                <div class="feature-icon">🎭</div>
-                <div class="feature-title">全风格适配</div>
-                <div class="feature-text">现代/轻奢/新中式全覆盖</div>
+            <div class="adv-item">
+                <div class="adv-icon">🎭</div>
+                <div class="adv-title">全风格适配</div>
+                <div class="adv-desc">适配现代、轻奢、新中式各类家装</div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section class="container">
-        <h2 class="section-title">为什么选择掌尚瓷砖</h2>
-        <ul class="advantage-list">
-            <li class="advantage-item">合圣陶瓷工厂直营店，无中间商，同品质价格更低</li>
-            <li class="advantage-item">大板、厨卫砖、岩板、洁具全品类现货配齐</li>
-            <li class="advantage-item">免费上门量尺、全屋专业铺贴设计</li>
-            <li class="advantage-item">家装、旧房翻新、自建房、小型工装均可供货</li>
-            <li class="advantage-item">安溪同城免费配送，减少搬运损耗</li>
-            <li class="advantage-item">高白胚超耐磨，长期使用不易发黄刮花</li>
-            <li class="advantage-item">实体门店可看样，无网购色差风险</li>
+    <!-- 选择我们理由 -->
+    <div class="section">
+        <h2 class="title">为什么选择掌尚瓷砖</h2>
+        <ul class="reason-list">
+            <li>合圣陶瓷官方工厂直营店，无中间商加价，同等品质价格更实惠</li>
+            <li>全品类现货库存，大板、厨卫砖、岩板、洁具一站式配齐，无需多方采购</li>
+            <li>免费上门量尺、专业设计师一对一全屋瓷砖铺贴搭配方案</li>
+            <li>承接家装、旧房翻新、农村自建房、小型工装批量供货</li>
+            <li>安溪本地门店，同城免费配送上门，减少搬运损耗与额外开销</li>
+            <li>产品高白胚、超耐磨、抗变黄，长期使用颜值在线</li>
+            <li>实体门店可实地看样，所见即所得，杜绝网购色差、品质不符问题</li>
         </ul>
-    </section>
+    </div>
 
-    <section class="container">
-        <h2 class="section-title">安溪本地完工案例</h2>
-        <div class="cases-grid">
+    <!-- 本地实景案例 -->
+    <div class="section">
+        <h2 class="title">安溪本地完工实景案例</h2>
+        <div class="case-grid">
             <div class="case-card">
-                <div class="case-gallery">
-                    <img class="gallery-img" src="11111.jpg" alt="浴室完工案例">
+                <div class="case-img">
+                    <img src="11111.jpg" alt="浴室装修实景案例">
                 </div>
-                <div class="case-info">
-                    <h3>现代简约浴室案例</h3>
-                    <p>旧房翻新专用柔光防滑砖，干湿分离，整洁耐看。</p>
+                <div class="case-text">
+                    <div class="case-title">现代简约浴室翻新案例</div>
+                    <div class="case-desc">安溪城区业主旧房翻新，选用防滑柔光厨卫砖，干湿分离设计，整洁耐用、颜值高级。</div>
                 </div>
             </div>
             <div class="case-card">
-                <div class="case-gallery">
-                    <img class="gallery-img" src="IMG_20260615_175004.jpg" alt="厨房完工案例">
+                <div class="case-img">
+                    <img src="IMG_20260615_175004.jpg" alt="厨房装修实景案例">
                 </div>
-                <div class="case-info">
-                    <h3>极简风厨房案例</h3>
-                    <p>浅色系防油污墙砖，适配现代橱柜，打理轻松。</p>
+                <div class="case-text">
+                    <div class="case-title">极简风厨房完工案例</div>
+                    <div class="case-desc">凤城镇自建房定制装修，浅色系防油污墙砖，适配现代橱柜，日常打理简单省心。</div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section class="contact-section" id="contact">
-        <h2 class="section-title" style="color:#fff;">联系我们</h2>
-        <div class="contact-details">
+    <!-- 联系我们 -->
+    <div class="section contact-box" id="contact">
+        <h2 class="title" style="color:#fff;">到店咨询｜实地看样</h2>
+        <div class="contact-grid">
             <div class="contact-item">
-                <h3>咨询电话1</h3>
+                <h3>咨询电话一</h3>
                 <p>18959938678</p>
             </div>
             <div class="contact-item">
-                <h3>咨询电话2</h3>
+                <h3>咨询电话二</h3>
                 <p>19559572136</p>
             </div>
             <div class="contact-item">
                 <h3>门店地址</h3>
-                <p>安溪凤城镇河滨西路452号<br>铭选中学对面</p>
+                <p>泉州市安溪县凤城镇<br>河滨西路452号（铭选中学对面）</p>
             </div>
         </div>
-        <a href="tel:18959938678" class="cta-button">一键拨号咨询</a>
-    </section>
+        <a href="tel:18959938678" class="btn-gold">一键拨号咨询</a>
+    </div>
 
+    <!-- 底部版权 -->
     <footer>
-        <p>© 2026 掌尚瓷砖｜安溪合圣陶瓷工厂直营店</p>
-        <p>地址：泉州市安溪县凤城镇河滨西路452号</p>
+        <p>© 2026 掌尚瓷砖｜安溪合圣陶瓷工厂直营店 版权所有</p>
+        <p>本地实体门店｜专业瓷砖家装一站式服务</p>
     </footer>
 </body>
 </html>
