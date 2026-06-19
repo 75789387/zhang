@@ -1,1 +1,460 @@
-1
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="安溪掌尚门窗专区，断桥铝窗户、铝合金平开门、推拉门、阳台落地窗、隔音隔热全屋门窗定制。">
+    <title>铝合金门窗专区｜掌尚全屋建材</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: "Microsoft Yahei", sans-serif;
+            color: #333;
+            background-color: #f8f8f8;
+            line-height: 1.7;
+            position: relative;
+        }
+        a {
+            text-decoration: none;
+        }
+        header {
+            width: 100%;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            background: transparent;
+            transition: all 0.4s ease;
+        }
+        header.bg-light {
+            background: rgba(255,255,255,0.85);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .header-wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .logo img {
+            height: 36px;
+            width: auto;
+            object-fit: contain;
+        }
+        .logo span {
+            color: #111;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        header.bg-light .logo span,
+        header.bg-light .header-tel p {
+            color: #111;
+        }
+        .header-right-box {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .header-tel {
+            color: #111;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+        .menu-btn {
+            width: 44px;
+            height: 44px;
+            background: transparent;
+            border: 2px solid #d4af37;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+        }
+        .menu-btn span {
+            width: 24px;
+            height: 2px;
+            background: #d4af37;
+            display: block;
+        }
+        .menu-mask {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 9998;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s opacity;
+        }
+        .menu-mask.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        .side-nav {
+            position: fixed;
+            top: 0;
+            right: -320px;
+            width: 300px;
+            height: 100%;
+            background: rgba(26, 26, 26, 0.7);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 9999;
+            padding: 40px 25px;
+            transition: 0.3s right ease;
+        }
+        .side-nav.show {
+            right: 0;
+        }
+        .side-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            color: #fff;
+            font-size: 28px;
+            cursor: pointer;
+        }
+        .side-title {
+            color: #d4af37;
+            font-size: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            margin-bottom: 30px;
+        }
+        .side-nav-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .side-nav-item {
+            display: block;
+            color: #fff;
+            font-size: 16px;
+            padding: 10px 14px;
+            border: 1px solid transparent;
+            border-radius: 8px;
+            transition: 0.2s;
+        }
+        .side-nav-item:hover {
+            border-color: #d4af37;
+            color: #d4af37;
+            background: rgba(255,255,255,0.08);
+        }
+        .section {
+            max-width: 1200px;
+            margin: 0 auto 30px;
+            padding: 100px 20px 60px;
+            background: #fff;
+            border-radius: 12px;
+        }
+        .title {
+            text-align: center;
+            font-size: 26px;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom:12px;
+        }
+        .title::after {
+            content: "";
+            width: 50px;
+            height: 3px;
+            background: #d4af37;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+        }
+        .brand-panel {
+            border: 1px solid #eee;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        .brand-toggle {
+            width: 100%;
+            padding: 16px 20px;
+            background: #f9f9f9;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            border: none;
+            font-size: 22px;
+            font-weight: 600;
+            text-align: left;
+            border-left:5px solid #d4af37;
+        }
+        .brand-toggle .arrow {
+            font-size: 24px;
+            color: #d4af37;
+            transition: transform 0.3s ease;
+        }
+        .brand-toggle.active .arrow {
+            transform: rotate(180deg);
+        }
+        .brand-content {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 20px;
+            transition: all 0.4s ease;
+        }
+        .brand-content.open {
+            padding: 20px;
+            max-height: 3000px;
+        }
+        .sub-title {
+            font-size:18px;
+            margin:25px 0 16px;
+            color:#555;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px,1fr));
+            gap:18px;
+            margin:12px 0 30px;
+        }
+        .gallery-card {
+            border:1px solid #eee;
+            border-radius:8px;
+            overflow:hidden;
+            transition:0.2s;
+        }
+        .gallery-card:hover {
+            box-shadow:0 4px 12px rgba(0,0,0,0.12);
+            transform:translateY(-3px);
+        }
+        .gallery-thumb {
+            width:100%;
+            height:140px;
+            object-fit:cover;
+            display:block;
+            loading: lazy;
+        }
+        .gallery-name {
+            padding:8px;
+            text-align:center;
+            font-size:13px;
+            color:#444;
+        }
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #888;
+            font-size: 13px;
+            background: #000;
+        }
+        footer a {
+            color:#d4af37;
+        }
+        @media (max-width: 768px) {
+            header {
+                padding: 8px 15px !important;
+            }
+            .logo img {
+                height: 28px !important;
+            }
+            .logo span {
+                font-size: 15px !important;
+            }
+            .header-tel {
+                display: none;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(2,1fr);
+            }
+            .section {
+                padding: 80px 15px 40px;
+            }
+            .side-nav {
+                width: 260px;
+            }
+            .brand-toggle {
+                font-size:19px;
+                padding:14px 16px;
+            }
+        }
+        img {
+            max-width: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <header id="topHeader">
+        <div class="header-wrap">
+            <a href="index.html" class="logo">
+                <img src="./img/logo.jpg" alt="掌尚瓷砖建材LOGO">
+                <span>掌尚瓷砖建材</span>
+            </a>
+            <div class="header-right-box">
+                <div class="header-tel">
+                    <p>📞 18959938678 / 19559572136</p>
+                    <p>安溪凤城镇河滨西路452号（铭选中学对面）</p>
+                </div>
+                <div class="menu-btn" id="openMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="menu-mask" id="menuMask"></div>
+    <div class="side-nav" id="sideNav">
+        <div class="side-close" id="closeMenu">×</div>
+        <div class="side-title">全品类产品导航</div>
+        <div class="side-nav-list">
+            <a href="index.html" class="side-nav-item">🏠 首页</a>
+            <a href="cz.html" class="side-nav-item">🧱 瓷砖专区</a>
+            <a href="fl.html" class="side-nav-item">🧴 瓷砖辅料</a>
+            <a href="wy.html" class="side-nav-item">🚿 卫浴洁具</a>
+            <a href="cl.html" class="side-nav-item">🪡 窗帘布艺</a>
+            <a href="dd.html" class="side-nav-item">🔲 吊顶系列</a>
+            <a href="mc.html" class="side-nav-item">🚪 铝合金门窗</a>
+            <a href="#contact" class="side-nav-item">📍 联系门店</a>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="title">铝合金门窗专区｜全屋定制门窗系列</h2>
+
+        <!-- 断桥铝平开窗（默认展开） -->
+        <div class="brand-panel">
+            <button class="brand-toggle active">
+                断桥铝平开窗
+                <span class="arrow">∨</span>
+            </button>
+            <div class="brand-content open">
+                <h4 class="sub-title">隔音隔热断桥窗 / 卧室落地窗 / 客厅观景窗</h4>
+                <div class="gallery-grid">
+                    <div class="gallery-card">
+                        <img class="gallery-thumb" src="./img/mc_dqc01.jpg" alt="极简断桥平开窗" loading="lazy">
+                        <div class="gallery-name">极简窄边断桥窗</div>
+                    </div>
+                    <div class="gallery-card">
+                        <img class="gallery-thumb" src="./img/mc_dqc02.jpg" alt="系统隔音断桥窗" loading="lazy">
+                        <div class="gallery-name">系统隔音隔热窗</div>
+                    </div>
+                    <div class="gallery-card">
+                        <img class="gallery-thumb" src="./img/mc_dqc03.jpg" alt="大固定开启断桥窗" loading="lazy">
+                        <div class="gallery-name">大固定观景断桥窗</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 阳台推拉门 -->
+        <div class="brand-panel">
+            <button class="brand-toggle">
+                阳台极简推拉门
+                <span class="arrow">∨</span>
+            </button>
+            <div class="brand-content">
+                <h4 class="sub-title">极窄边框推拉门 / 三轨联动 / 厨房隔断门</h4>
+                <div class="gallery-grid">
+                    <div class="gallery-card">
+                        <img class="gallery-thumb" src="./img/mc_tlm01.jpg" alt="极窄三轨推拉门" loading="lazy">
+                        <div class="gallery-name">极窄三轨联动推拉门</div>
+                    </div>
+                    <div class="gallery-card">
+                        <img class="gallery-thumb" src="./img/mc_tlm02.jpg" alt="厨房极简隔断门" loading="lazy">
+                        <div class="gallery-name">厨房钢化玻璃隔断门</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 厨卫平开门 -->
+        <div class="brand-panel">
+            <button class="brand-toggle">
+                厨卫铝合金平开门
+                <span class="arrow">∨</span>
+            </button>
+            <div class="brand-content">
+                <h4 class="sub-title">卫生间平开门 / 厨房单开门 / 防水防潮门窗</h4>
+                <div class="gallery-grid">
+                    <div class="gallery-card">
+                        <img class="gallery-thumb" src="./img/mc_pkm01.jpg" alt="卫生间极窄平开门" loading="lazy">
+                        <div class="gallery-name">卫生间极窄平开门</div>
+                    </div>
+                    <div class="gallery-card">
+                        <img class="gallery-thumb" src="./img/mc_pkm02.jpg" alt="厨房简约平开门" loading="lazy">
+                        <div class="gallery-name">厨房简约钢化平开门</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 掌尚全屋建材｜安溪一站式家装直营店 版权所有</p>
+        <p>
+            <a href="index.html">返回首页</a>
+            | <a href="cz.html">瓷砖专区</a>
+            | <a href="fl.html">瓷砖辅料</a>
+            | <a href="wy.html">卫浴</a>
+            | <a href="cl.html">窗帘</a>
+            | <a href="dd.html">吊顶</a>
+        </p>
+    </footer>
+
+    <script>
+        const openBtn = document.getElementById('openMenu');
+        const closeBtn = document.getElementById('closeMenu');
+        const sideNav = document.getElementById('sideNav');
+        const mask = document.getElementById('menuMask');
+        const navLinks = document.querySelectorAll('.side-nav-item');
+        const headerDom = document.getElementById('topHeader');
+
+        openBtn.addEventListener('click', () => {
+            sideNav.classList.add('show');
+            mask.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        })
+        function closeMenu() {
+            sideNav.classList.remove('show');
+            mask.classList.remove('show');
+            document.body.style.overflow = '';
+        }
+        closeBtn.addEventListener('click', closeMenu);
+        mask.addEventListener('click', closeMenu);
+        navLinks.forEach(link => {
+            link.addEventListener('click', closeMenu)
+        })
+        window.addEventListener('scroll', () => {
+            if(window.scrollY > 100){
+                headerDom.classList.add('bg-light');
+            }else{
+                headerDom.classList.remove('bg-light');
+            }
+        })
+        const brandToggles = document.querySelectorAll('.brand-toggle');
+        brandToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const content = toggle.nextElementSibling;
+                toggle.classList.toggle('active');
+                content.classList.toggle('open');
+            })
+        })
+    </script>
+</body>
+</html>
