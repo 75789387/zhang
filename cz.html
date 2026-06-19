@@ -3,32 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="合圣陶瓷全规格瓷砖图库，400×800/800×800/600×1200/750×1500花色缩略图展示。">
-    <title>合圣陶瓷产品图册｜掌尚瓷砖</title>
-    <link rel="preconnect" href="https://75789387.github.io">
+    <meta name="description" content="安溪掌尚瓷砖专区，帕莎迪奥、美茜雅、合圣、高卓能、以利亚多品牌全规格瓷砖图库，免费上门量尺搭配。">
+    <title>瓷砖专区｜掌尚全屋建材</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
         body {
             font-family: "Microsoft Yahei", sans-serif;
             color: #333;
             background-color: #f8f8f8;
             line-height: 1.7;
+            position: relative;
         }
         a {
             text-decoration: none;
         }
-
+        /* 顶部透明悬浮头部，和首页统一 */
         header {
             width: 100%;
-            background: #111;
-            padding: 6px 20px;
-            position: sticky;
+            padding: 10px 20px;
+            position: fixed;
             top: 0;
-            z-index: 999;
+            left: 0;
+            z-index: 9999;
+            background: transparent;
+            transition: all 0.4s ease;
+        }
+        header.bg-light {
+            background: rgba(255,255,255,0.85);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
         }
         .header-wrap {
             max-width: 1200px;
@@ -36,8 +43,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap:10px;
         }
         .logo {
             display: flex;
@@ -45,54 +50,129 @@
             gap: 8px;
         }
         .logo img {
-            height: 38px;
+            height: 36px;
+            width: auto;
+            object-fit: contain;
         }
         .logo span {
-            color: #fff;
+            color: #111;
             font-size: 18px;
             font-weight: 600;
         }
+        header.bg-light .logo span,
+        header.bg-light .header-tel p {
+            color: #111;
+        }
+        .header-right-box {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
         .header-tel {
+            color: #111;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+        /* 汉堡菜单按钮 统一金色样式 */
+        .menu-btn {
+            width: 44px;
+            height: 44px;
+            background: transparent;
+            border: 2px solid #d4af37;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+        }
+        .menu-btn span {
+            width: 24px;
+            height: 2px;
+            background: #d4af37;
+            display: block;
+        }
+        /* 侧边遮罩层 */
+        .menu-mask {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 9998;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s opacity;
+        }
+        .menu-mask.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        /* 侧边透明磨砂导航栏 */
+        .side-nav {
+            position: fixed;
+            top: 0;
+            right: -320px;
+            width: 300px;
+            height: 100%;
+            background: rgba(26, 26, 26, 0.7);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 9999;
+            padding: 40px 25px;
+            transition: 0.3s right ease;
+        }
+        .side-nav.show {
+            right: 0;
+        }
+        .side-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
             color: #fff;
-            font-size: 13px;
-            text-align: right;
+            font-size: 28px;
+            cursor: pointer;
         }
-
-        .page-nav {
-            width:100%;
-            background:#222;
-            padding:10px 20px;
+        .side-title {
+            color: #d4af37;
+            font-size: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            margin-bottom: 30px;
         }
-        .nav-inner {
-            max-width:1200px;
-            margin:0 auto;
-            display:flex;
-            gap:12px;
-            flex-wrap:wrap;
+        .side-nav-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
         }
-        .nav-item {
-            color:#fff;
-            padding:6px 16px;
-            border:1px solid #d4af37;
-            border-radius:20px;
-            font-size:14px;
+        .side-nav-item {
+            display: block;
+            color: #fff;
+            font-size: 16px;
+            padding: 10px 14px;
+            border: 1px solid transparent;
+            border-radius: 8px;
+            transition: 0.2s;
         }
-        .nav-item:hover {
-            background:#d4af37;
-            color:#000;
+        .side-nav-item:hover {
+            border-color: #d4af37;
+            color: #d4af37;
+            background: rgba(255,255,255,0.08);
         }
-
+        /* 主体内容区块，顶部预留fixed头部空间 */
         .section {
             max-width: 1200px;
-            margin: 30px auto;
-            padding: 60px 20px;
+            margin: 0 auto 30px;
+            padding: 100px 20px 60px;
             background: #fff;
             border-radius: 12px;
         }
         .title {
             text-align: center;
             font-size: 26px;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             position: relative;
             padding-bottom:12px;
         }
@@ -106,19 +186,59 @@
             transform: translateX(-50%);
             bottom: 0;
         }
-        .sub-title {
-            font-size:20px;
-            margin:30px 0 20px;
-            border-left:4px solid #d4af37;
-            padding-left:12px;
+        /* 品牌折叠面板容器 */
+        .brand-panel {
+            border: 1px solid #eee;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            overflow: hidden;
         }
-
-        /* 缩略图库 */
+        /* 品牌折叠标题栏（可点击展开/收起） */
+        .brand-toggle {
+            width: 100%;
+            padding: 16px 20px;
+            background: #f9f9f9;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            border: none;
+            font-size: 22px;
+            font-weight: 600;
+            text-align: left;
+            border-left:5px solid #d4af37;
+        }
+        .brand-toggle .arrow {
+            font-size: 24px;
+            color: #d4af37;
+            transition: transform 0.3s ease;
+        }
+        .brand-toggle.active .arrow {
+            transform: rotate(180deg);
+        }
+        /* 品牌内容区域，默认隐藏 */
+        .brand-content {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 20px;
+            transition: all 0.4s ease;
+        }
+        .brand-content.open {
+            padding: 20px;
+            max-height: 3000px;
+        }
+        /* 规格小标题 */
+        .sub-title {
+            font-size:18px;
+            margin:25px 0 16px;
+            color:#555;
+        }
+        /* 缩略图库网格 */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(160px,1fr));
             gap:18px;
-            margin:20px 0;
+            margin:12px 0 30px;
         }
         .gallery-card {
             border:1px solid #eee;
@@ -135,6 +255,8 @@
             height:140px;
             object-fit:cover;
             display:block;
+            /* 原生懒加载核心属性 */
+            loading: lazy;
         }
         .gallery-name {
             padding:8px;
@@ -142,7 +264,6 @@
             font-size:13px;
             color:#444;
         }
-
         footer {
             text-align: center;
             padding: 30px 20px;
@@ -150,118 +271,306 @@
             font-size: 13px;
             background: #000;
         }
-
+        footer a {
+            color:#d4af37;
+        }
+        /* 手机端适配 */
         @media (max-width: 768px) {
+            header {
+                padding: 8px 15px !important;
+            }
             .logo img {
-                height: 26px !important;
+                height: 28px !important;
             }
             .logo span {
-                font-size: 14px !important;
+                font-size: 15px !important;
             }
             .header-tel {
-                font-size: 10px !important;
-            }
-            header {
-                padding: 5px 15px !important;
+                display: none;
             }
             .gallery-grid {
                 grid-template-columns: repeat(2,1fr);
             }
             .section {
-                padding: 40px 15px;
+                padding: 80px 15px 40px;
+            }
+            .side-nav {
+                width: 260px;
+            }
+            .brand-toggle {
+                font-size:19px;
+                padding:14px 16px;
             }
         }
         img {
             max-width: 100%;
             border: none;
-            loading: lazy;
         }
     </style>
 </head>
 <body>
-    <header>
+    <!-- 透明悬浮顶部头部 -->
+    <header id="topHeader">
         <div class="header-wrap">
             <a href="index.html" class="logo">
-                <img src="./img/logo.jpg" alt="掌尚瓷砖LOGO">
-                <span>掌尚瓷砖</span>
+                <img src="./img/logo.jpg" alt="掌尚瓷砖建材LOGO">
+                <span>掌尚瓷砖建材</span>
             </a>
-            <div class="header-tel">
-                <p>📞 18959938678 / 19559572136</p>
-                <p>📍 安溪凤城镇河滨西路452号</p>
+            <div class="header-right-box">
+                <div class="header-tel">
+                    <p>📞 18959938678 / 19559572136</p>
+                    <p>安溪凤城镇河滨西路452号（铭选中学对面）</p>
+                </div>
+                <div class="menu-btn" id="openMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </header>
 
-    <div class="page-nav">
-        <div class="nav-inner">
-            <a href="index.html" class="nav-item">返回首页</a>
-            <a href="hs-tile.html" class="nav-item">合圣陶瓷图册</a>
-            <a href="other-tile.html" class="nav-item">外墙/地铺/仿古砖</a>
+    <!-- 侧边弹出导航遮罩+透明导航面板 -->
+    <div class="menu-mask" id="menuMask"></div>
+    <div class="side-nav" id="sideNav">
+        <div class="side-close" id="closeMenu">×</div>
+        <div class="side-title">全品类产品导航</div>
+        <div class="side-nav-list">
+            <a href="index.html" class="side-nav-item">🏠 首页</a>
+            <a href="cz.html" class="side-nav-item">🧱 瓷砖专区</a>
+            <a href="fl.html" class="side-nav-item">🧴 瓷砖辅料</a>
+            <a href="wy.html" class="side-nav-item">🚿 卫浴洁具</a>
+            <a href="cl.html" class="side-nav-item">🪡 窗帘布艺</a>
+            <a href="dd.html" class="side-nav-item">🔲 吊顶系列</a>
+            <a href="mc.html" class="side-nav-item">🚪 铝合金门窗</a>
+            <a href="#contact" class="side-nav-item">📍 联系门店</a>
         </div>
     </div>
 
+    <!-- 瓷砖图库主体 - 折叠面板品牌布局 -->
     <div class="section">
-        <h2 class="title">合圣陶瓷 全规格花色图册</h2>
-        <h3 class="sub-title">400×800mm 厨卫配套砖</h3>
-        <div class="gallery-grid">
-            <div class="gallery-card">
-                <img class="gallery-thumb" src="./img/hs4080_01.jpg" alt="400×800浅灰柔光">
-                <div class="gallery-name">柔光浅灰厨卫款</div>
-            </div>
-            <div class="gallery-card">
-                <img class="gallery-thumb" src="./img/hs4080_02.jpg" alt="400×800纯白防滑">
-                <div class="gallery-name">纯白防滑配套砖</div>
-            </div>
-            <div class="gallery-card">
-                <img class="gallery-thumb" src="./img/hs4080_03.jpg" alt="400×800浅纹哑光">
-                <div class="gallery-name">浅纹哑光厨卫砖</div>
+        <h2 class="title">瓷砖专区 多品牌全规格花色图库</h2>
+
+        <!-- 品牌1：帕莎迪奥（默认打开） -->
+        <div class="brand-panel">
+            <button class="brand-toggle active">
+                帕莎迪奥瓷砖
+                <span class="arrow">∨</span>
+            </button>
+            <div class="brand-content open">
+                <h4 class="sub-title">400×800mm 厨卫配套砖</h4>
+                <div class="gallery-grid">
+                    <div class="gallery-card">
+                        <img class="gallery-thumb" src="./img/cz_psda01.jpg" alt="帕莎迪奥浅灰柔光厨卫砖" loading="lazy">
+                        <div class="gallery-name">浅灰柔光厨卫款</div>
+                    </div>
+                    <div class="gallery-card">
+                        <img class="gallery-thumb" src="./img/cz_psda02.jpg" alt="帕莎迪奥纯白防滑砖" loading="lazy">
+                        <div class="gallery-name">纯白防滑配套砖</div>
+                    </div>
+                    <div class="gallery-card">
+                        <img class="gallery-thumb" src="./img/cz_psda03.jpg" alt="帕莎迪奥浅纹哑光砖" loading="lazy">
+                        <div class="gallery-name">浅纹哑光厨卫砖</div>
+                    </div>
+                    <div class="gallery-card">
+                        <img class="gallery-thumb" src="./img/cz_psda04.jpg" alt="帕莎迪奥奶白柔光砖" loading="lazy">
+                        <div class="gallery-name">奶白柔光厨卫砖</div>
+                    </div>
+                    <div class="gallery-card">
+                        <img class="gallery-thumb" src="./img/cz_psda05.jpg" alt="帕莎迪奥浅灰水磨石" loading="lazy">
+                        <div class="gallery-name">浅灰水磨石厨卫砖</div>
+                    </div>
+                    <div class="gallery-card">
+                        <img class="gallery-thumb" src="./img/cz_psda06.jpg" alt="帕莎迪奥浅米灰素色" loading="lazy">
+                        <div class="gallery-name">浅米灰素色砖</div>
+                    </div>
+                    <div class="gallery-card">
+                        <img class="gallery-thumb" src="./img/cz_psda07.jpg" alt="帕莎迪奥云雾白哑光" loading="lazy">
+                        <div class="gallery-name">云雾白哑光厨卫砖</div>
+                    </div>
+                    <div class="gallery-card">
+                        <img class="gallery-thumb" src="./img/cz_psda08.jpg" alt="帕莎迪奥浅咖柔光砖" loading="lazy">
+                        <div class="gallery-name">浅咖柔光厨卫砖</div>
+                    </div>
+                </div>
+                <h4 class="sub-title">750×1500mm 通体大板</h4>
+                <div class="gallery-grid">
+                    <div class="gallery-card">
+                        <img class="gallery-thumb" src="./img/cz_psda09.jpg" alt="帕莎迪奥云朵白大板" loading="lazy">
+                        <div class="gallery-name">云朵白连纹大板</div>
+                    </div>
+                    <div class="gallery-card">
+                        <img class="gallery-thumb" src="./img/cz_psda10.jpg" alt="帕莎迪奥浅灰大理石大板" loading="lazy">
+                        <div class="gallery-name">浅灰大理石大板</div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <h3 class="sub-title">800×800mm 客厅通体地砖</h3>
-        <div class="gallery-grid">
-            <div class="gallery-card">
-                <img class="gallery-thumb" src="./img/hs8080_01.jpg" alt="800×800浅灰大理石">
-                <div class="gallery-name">浅灰大理石通体砖</div>
-            </div>
-            <div class="gallery-card">
-                <img class="gallery-thumb" src="./img/hs8080_02.jpg" alt="800×800中灰柔光">
-                <div class="gallery-name">中灰柔光通体砖</div>
+        <!-- 品牌2：美茜雅（默认收起） -->
+        <div class="brand-panel">
+            <button class="brand-toggle">
+                美茜雅瓷砖
+                <span class="arrow">∨</span>
+            </button>
+            <div class="brand-content">
+                <h4 class="sub-title">800×800mm 客厅通体地砖</h4>
+                <div class="gallery-grid">
+                    <div class="gallery-card">
+                        <img class="gallery-thumb" src="./img/cz_mxy01.jpg" alt="美茜雅浅灰大理石地砖" loading="lazy">
+                        <div class="gallery-name">浅灰大理石通体砖</div>
+                    </div>
+                    <div class="gallery-card">
+                        <img class="gallery-thumb" src="./img/cz_mxy02.jpg" alt="美茜雅中灰柔光地砖" loading="lazy">
+                        <div class="gallery-name">中灰柔光通体砖</div>
+                    </div>
+                </div>
+                <h4 class="sub-title">600×1200mm 全屋中板</h4>
+                <div class="gallery-grid">
+                    <div class="gallery-card">
+                        <img class="gallery-thumb" src="./img/cz_mxy03.jpg" alt="美茜雅原木纹中板" loading="lazy">
+                        <div class="gallery-name">原木纹通铺中板</div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <h3 class="sub-title">600×1200mm 全屋中板</h3>
-        <div class="gallery-grid">
-            <div class="gallery-card">
-                <img class="gallery-thumb" src="./img/hs6012_01.jpg" alt="600×1200原木纹">
-                <div class="gallery-name">原木纹通铺中板</div>
-            </div>
-            <div class="gallery-card">
-                <img class="gallery-thumb" src="./img/hs6012_02.jpg" alt="600×1200浅灰大理石">
-                <div class="gallery-name">浅灰大理石中板</div>
+        <!-- 品牌3：合圣陶瓷（默认收起） -->
+        <div class="brand-panel">
+            <button class="brand-toggle">
+                合圣陶瓷
+                <span class="arrow">∨</span>
+            </button>
+            <div class="brand-content">
+                <h4 class="sub-title">400×800mm 厨卫配套砖</h4>
+                <div class="gallery-grid">
+                    <div class="gallery-card">
+                        <img class="gallery-thumb" src="./img/cz_hs01.jpg" alt="合圣浅纹哑光厨卫砖" loading="lazy">
+                        <div class="gallery-name">浅纹哑光厨卫砖</div>
+                    </div>
+                </div>
+                <h4 class="sub-title">750×1500mm 无限连纹大板</h4>
+                <div class="gallery-grid">
+                    <div class="gallery-card">
+                        <img class="gallery-thumb" src="./img/cz_hs02.jpg" alt="合圣深灰轻奢大板" loading="lazy">
+                        <div class="gallery-name">深灰轻奢大板</div>
+                    </div>
+                    <div class="gallery-card">
+                        <img class="gallery-thumb" src="./img/cz_hs03.jpg" alt="合圣浅白柔光大板" loading="lazy">
+                        <div class="gallery-name">浅白柔光大板</div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <h3 class="sub-title">750×1500mm 无限连纹大板</h3>
-        <div class="gallery-grid">
-            <div class="gallery-card">
-                <img class="gallery-thumb" src="./img/hs7515_01.jpg" alt="750×1500云朵白">
-                <div class="gallery-name">云朵白无限连纹大板</div>
+        <!-- 品牌4：高卓能瓷砖（默认收起） -->
+        <div class="brand-panel">
+            <button class="brand-toggle">
+                高卓能瓷砖
+                <span class="arrow">∨</span>
+            </button>
+            <div class="brand-content">
+                <h4 class="sub-title">800×800mm 防滑通体砖</h4>
+                <div class="gallery-grid">
+                    <div class="gallery-card">
+                        <img class="gallery-thumb" src="./img/cz_gzn01.jpg" alt="高卓能浅灰柔光通体砖" loading="lazy">
+                        <div class="gallery-name">浅灰柔光通体砖</div>
+                    </div>
+                </div>
+                <h4 class="sub-title">600×1200mm 工程专用中板</h4>
+                <div class="gallery-grid">
+                    <div class="gallery-card">
+                        <img class="gallery-thumb" src="./img/cz_gzn02.jpg" alt="高卓雅浅灰大理石中板" loading="lazy">
+                        <div class="gallery-name">浅灰大理石中板</div>
+                    </div>
+                </div>
             </div>
-            <div class="gallery-card">
-                <img class="gallery-thumb" src="./img/hs7515_02.jpg" alt="750×1500深灰轻奢">
-                <div class="gallery-name">深灰轻奢大板</div>
-            </div>
-            <div class="gallery-card">
-                <img class="gallery-thumb" src="./img/hs7515_03.jpg" alt="750×1500浅白柔光">
-                <div class="gallery-name">浅白柔光大板</div>
+        </div>
+
+        <!-- 品牌5：以利亚瓷砖（默认收起） -->
+        <div class="brand-panel">
+            <button class="brand-toggle">
+                以利亚瓷砖
+                <span class="arrow">∨</span>
+            </button>
+            <div class="brand-content">
+                <h4 class="sub-title">750×1500mm 高端连纹大板</h4>
+                <div class="gallery-grid">
+                    <div class="gallery-card">
+                        <img class="gallery-thumb" src="./img/cz_ylj01.jpg" alt="以利亚云雾白大板" loading="lazy">
+                        <div class="gallery-name">云雾白无限连纹</div>
+                    </div>
+                    <div class="gallery-card">
+                        <img class="gallery-thumb" src="./img/cz_ylj02.jpg" alt="以利亚浅灰柔光大板" loading="lazy">
+                        <div class="gallery-name">浅灰柔光通体大板</div>
+                    </div>
+                </div>
+                <h4 class="sub-title">外墙/地铺/仿古砖系列</h4>
+                <div class="gallery-grid">
+                    <div class="gallery-card">
+                        <img class="gallery-thumb" src="./img/cz_ylj03.jpg" alt="以利亚仿古防滑地铺石" loading="lazy">
+                        <div class="gallery-name">户外仿古地铺石</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <footer>
-        <p>© 2026 掌尚瓷砖｜安溪合圣陶瓷工厂直营店</p>
-        <p><a href="index.html" style="color:#d4af37;">返回首页</a> | <a href="other-tile.html" style="color:#d4af37;">外墙地铺仿古砖图库</a></p>
+        <p>© 2026 掌尚全屋建材｜安溪一站式家装直营店 版权所有</p>
+        <p>
+            <a href="index.html">返回首页</a>
+            | <a href="fl.html">瓷砖辅料</a>
+            | <a href="wy.html">卫浴</a>
+            | <a href="cl.html">窗帘</a>
+            | <a href="dd.html">吊顶</a>
+            | <a href="mc.html">门窗</a>
+        </p>
     </footer>
+
+    <script>
+        // 侧边菜单交互JS
+        const openBtn = document.getElementById('openMenu');
+        const closeBtn = document.getElementById('closeMenu');
+        const sideNav = document.getElementById('sideNav');
+        const mask = document.getElementById('menuMask');
+        const navLinks = document.querySelectorAll('.side-nav-item');
+        const headerDom = document.getElementById('topHeader');
+
+        openBtn.addEventListener('click', () => {
+            sideNav.classList.add('show');
+            mask.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        })
+        function closeMenu() {
+            sideNav.classList.remove('show');
+            mask.classList.remove('show');
+            document.body.style.overflow = '';
+        }
+        closeBtn.addEventListener('click', closeMenu);
+        mask.addEventListener('click', closeMenu);
+        navLinks.forEach(link => {
+            link.addEventListener('click', closeMenu)
+        })
+        // 滚动超过100px头部切换半透白底
+        window.addEventListener('scroll', () => {
+            if(window.scrollY > 100){
+                headerDom.classList.add('bg-light');
+            }else{
+                headerDom.classList.remove('bg-light');
+            }
+        })
+
+        // ========== 品牌折叠面板交互JS ==========
+        const brandToggles = document.querySelectorAll('.brand-toggle');
+        brandToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                // 切换当前面板展开/收起状态
+                const content = toggle.nextElementSibling;
+                toggle.classList.toggle('active');
+                content.classList.toggle('open');
+            })
+        })
+    </script>
 </body>
 </html>
