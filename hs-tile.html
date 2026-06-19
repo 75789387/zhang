@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="合圣陶瓷全规格瓷砖图库，400×800/800×800/600×1200/750×1500花色缩略图展示。">
+    <title>合圣陶瓷产品图册｜掌尚瓷砖</title>
+    <link rel="preconnect" href="https://75789387.github.io">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Microsoft Yahei", sans-serif;
+            color: #333;
+            background-color: #f8f8f8;
+            line-height: 1.7;
+        }
+        a {
+            text-decoration: none;
+        }
+
+        header {
+            width: 100%;
+            background: #111;
+            padding: 6px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+        .header-wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap:10px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .logo img {
+            height: 38px;
+        }
+        .logo span {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .header-tel {
+            color: #fff;
+            font-size: 13px;
+            text-align: right;
+        }
+
+        .page-nav {
+            width:100%;
+            background:#222;
+            padding:10px 20px;
+        }
+        .nav-inner {
+            max-width:1200px;
+            margin:0 auto;
+            display:flex;
+            gap:12px;
+            flex-wrap:wrap;
+        }
+        .nav-item {
+            color:#fff;
+            padding:6px 16px;
+            border:1px solid #d4af37;
+            border-radius:20px;
+            font-size:14px;
+        }
+        .nav-item:hover {
+            background:#d4af37;
+            color:#000;
+        }
+
+        .section {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 60px 20px;
+            background: #fff;
+            border-radius: 12px;
+        }
+        .title {
+            text-align: center;
+            font-size: 26px;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom:12px;
+        }
+        .title::after {
+            content: "";
+            width: 50px;
+            height: 3px;
+            background: #d4af37;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+        }
+        .sub-title {
+            font-size:20px;
+            margin:30px 0 20px;
+            border-left:4px solid #d4af37;
+            padding-left:12px;
+        }
+
+        /* 缩略图库 */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px,1fr));
+            gap:18px;
+            margin:20px 0;
+        }
+        .gallery-card {
+            border:1px solid #eee;
+            border-radius:8px;
+            overflow:hidden;
+            transition:0.2s;
+        }
+        .gallery-card:hover {
+            box-shadow:0 4px 12px rgba(0,0,0,0.12);
+            transform:translateY(-3px);
+        }
+        .gallery-thumb {
+            width:100%;
+            height:140px;
+            object-fit:cover;
+            display:block;
+        }
+        .gallery-name {
+            padding:8px;
+            text-align:center;
+            font-size:13px;
+            color:#444;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #888;
+            font-size: 13px;
+            background: #000;
+        }
+
+        @media (max-width: 768px) {
+            .logo img {
+                height: 26px !important;
+            }
+            .logo span {
+                font-size: 14px !important;
+            }
+            .header-tel {
+                font-size: 10px !important;
+            }
+            header {
+                padding: 5px 15px !important;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(2,1fr);
+            }
+            .section {
+                padding: 40px 15px;
+            }
+        }
+        img {
+            max-width: 100%;
+            border: none;
+            loading: lazy;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-wrap">
+            <a href="index.html" class="logo">
+                <img src="./img/logo.jpg" alt="掌尚瓷砖LOGO">
+                <span>掌尚瓷砖</span>
+            </a>
+            <div class="header-tel">
+                <p>📞 18959938678 / 19559572136</p>
+                <p>📍 安溪凤城镇河滨西路452号</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-item">返回首页</a>
+            <a href="hs-tile.html" class="nav-item">合圣陶瓷图册</a>
+            <a href="other-tile.html" class="nav-item">外墙/地铺/仿古砖</a>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="title">合圣陶瓷 全规格花色图册</h2>
+        <h3 class="sub-title">400×800mm 厨卫配套砖</h3>
+        <div class="gallery-grid">
+            <div class="gallery-card">
+                <img class="gallery-thumb" src="./img/hs4080_01.jpg" alt="400×800浅灰柔光">
+                <div class="gallery-name">柔光浅灰厨卫款</div>
+            </div>
+            <div class="gallery-card">
+                <img class="gallery-thumb" src="./img/hs4080_02.jpg" alt="400×800纯白防滑">
+                <div class="gallery-name">纯白防滑配套砖</div>
+            </div>
+            <div class="gallery-card">
+                <img class="gallery-thumb" src="./img/hs4080_03.jpg" alt="400×800浅纹哑光">
+                <div class="gallery-name">浅纹哑光厨卫砖</div>
+            </div>
+        </div>
+
+        <h3 class="sub-title">800×800mm 客厅通体地砖</h3>
+        <div class="gallery-grid">
+            <div class="gallery-card">
+                <img class="gallery-thumb" src="./img/hs8080_01.jpg" alt="800×800浅灰大理石">
+                <div class="gallery-name">浅灰大理石通体砖</div>
+            </div>
+            <div class="gallery-card">
+                <img class="gallery-thumb" src="./img/hs8080_02.jpg" alt="800×800中灰柔光">
+                <div class="gallery-name">中灰柔光通体砖</div>
+            </div>
+        </div>
+
+        <h3 class="sub-title">600×1200mm 全屋中板</h3>
+        <div class="gallery-grid">
+            <div class="gallery-card">
+                <img class="gallery-thumb" src="./img/hs6012_01.jpg" alt="600×1200原木纹">
+                <div class="gallery-name">原木纹通铺中板</div>
+            </div>
+            <div class="gallery-card">
+                <img class="gallery-thumb" src="./img/hs6012_02.jpg" alt="600×1200浅灰大理石">
+                <div class="gallery-name">浅灰大理石中板</div>
+            </div>
+        </div>
+
+        <h3 class="sub-title">750×1500mm 无限连纹大板</h3>
+        <div class="gallery-grid">
+            <div class="gallery-card">
+                <img class="gallery-thumb" src="./img/hs7515_01.jpg" alt="750×1500云朵白">
+                <div class="gallery-name">云朵白无限连纹大板</div>
+            </div>
+            <div class="gallery-card">
+                <img class="gallery-thumb" src="./img/hs7515_02.jpg" alt="750×1500深灰轻奢">
+                <div class="gallery-name">深灰轻奢大板</div>
+            </div>
+            <div class="gallery-card">
+                <img class="gallery-thumb" src="./img/hs7515_03.jpg" alt="750×1500浅白柔光">
+                <div class="gallery-name">浅白柔光大板</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 掌尚瓷砖｜安溪合圣陶瓷工厂直营店</p>
+        <p><a href="index.html" style="color:#d4af37;">返回首页</a> | <a href="other-tile.html" style="color:#d4af37;">外墙地铺仿古砖图库</a></p>
+    </footer>
+</body>
+</html>
