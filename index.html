@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="安溪掌尚瓷砖合圣陶瓷工厂直营店，多规格瓷砖、外墙地铺仿古砖，免费上门量尺设计配送。">
-    <meta name="keywords" content="安溪瓷砖,合圣陶瓷,大板,厨卫砖,地铺石,外墙砖">
-    <title>掌尚瓷砖｜安溪合圣陶瓷工厂直营店</title>
-    <link rel="preconnect" href="https://75789387.github.io">
+    <meta name="description" content="安溪掌尚全屋建材直营店，瓷砖、辅料、卫浴、窗帘、吊顶、铝合金门窗一站式采购，免费上门量尺设计配送。">
+    <meta name="keywords" content="安溪瓷砖,卫浴,窗帘,吊顶,铝合金门窗,瓷砖辅料,全屋家装建材">
+    <title>掌尚全屋建材｜安溪一站式家装直营店</title>
     <style>
         * {
             margin: 0;
@@ -23,7 +22,6 @@
         a {
             text-decoration: none;
         }
-
         /* 顶部导航 LOGO极小 */
         header {
             width: 100%;
@@ -65,8 +63,7 @@
             text-align: right;
             line-height: 1.5;
         }
-
-        /* 页面跳转导航栏 */
+        /* 全局分类导航栏 */
         .page-nav {
             width:100%;
             background:#222;
@@ -91,7 +88,6 @@
             background:#d4af37;
             color:#000;
         }
-
         /* 横幅 */
         .banner {
             width: 100%;
@@ -123,7 +119,6 @@
             background: #e9c250;
             transform: translateY(-2px);
         }
-
         /* 通用区块 */
         .section {
             max-width: 1200px;
@@ -150,8 +145,7 @@
             transform: translateX(-50%);
             bottom: 0;
         }
-
-        /* 产品跳转按钮 */
+        /* 六大品类跳转卡片 */
         .jump-box {
             display: flex;
             flex-wrap: wrap;
@@ -181,8 +175,7 @@
             color:#666;
             margin-bottom:15px;
         }
-
-        /* 优势板块 */
+        /* 门店优势 */
         .advantage-grid {
             display: grid;
             grid-template-columns: repeat(4,1fr);
@@ -207,63 +200,7 @@
             font-size: 13px;
             color: #666;
         }
-
-        /* 优势列表 */
-        .reason-list {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .reason-list li {
-            list-style: none;
-            padding: 12px 0;
-            padding-left: 30px;
-            position: relative;
-            font-size: 15px;
-        }
-        .reason-list li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #d4af37;
-            font-weight: bold;
-            font-size: 18px;
-        }
-
-        /* 少量案例 */
-        .case-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-        }
-        .case-card {
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid #f0f0f0;
-        }
-        .case-img {
-            width: 100%;
-            height: 240px;
-        }
-        .case-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            loading: lazy;
-        }
-        .case-text {
-            padding: 20px;
-        }
-        .case-title {
-            font-size: 17px;
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
-        .case-desc {
-            font-size: 14px;
-            color: #666;
-        }
-
-        /* 联系 */
+        /* 联系板块 */
         .contact-box {
             background: #111;
             color: #fff;
@@ -288,7 +225,6 @@
             font-size: 16px;
             margin-bottom: 10px;
         }
-
         footer {
             text-align: center;
             padding: 30px 20px;
@@ -296,8 +232,7 @@
             font-size: 13px;
             background: #000;
         }
-
-        /* 手机适配 */
+        /* 手机端适配 */
         @media (max-width: 768px) {
             header {
                 padding: 5px 15px !important;
@@ -317,7 +252,7 @@
             .banner p {
                 font-size: 14px;
             }
-            .advantage-grid,.case-grid,.contact-grid {
+            .advantage-grid,.contact-grid {
                 grid-template-columns: 1fr !important;
             }
             .section {
@@ -336,8 +271,8 @@
     <header>
         <div class="header-wrap">
             <a href="index.html" class="logo">
-                <img src="./img/logo.jpg" alt="掌尚瓷砖LOGO">
-                <span>掌尚瓷砖</span>
+                <img src="./img/logo.jpg" alt="掌尚全屋建材LOGO">
+                <span>掌尚全屋建材</span>
             </a>
             <div class="header-tel">
                 <p>📞 18959938678 / 19559572136</p>
@@ -345,103 +280,89 @@
             </div>
         </div>
     </header>
-
+    <!-- 六大品类顶部导航 -->
     <div class="page-nav">
         <div class="nav-inner">
             <a href="index.html" class="nav-item">首页</a>
-            <a href="hs-tile.html" class="nav-item">合圣陶瓷全规格图册</a>
-            <a href="other-tile.html" class="nav-item">外墙砖/地铺石/仿古砖</a>
-            <a href="#contact" class="nav-item">门店联系我们</a>
+            <a href="tile.html" class="nav-item">瓷砖专区</a>
+            <a href="accessory.html" class="nav-item">瓷砖辅料</a>
+            <a href="bathroom.html" class="nav-item">卫浴洁具</a>
+            <a href="curtain.html" class="nav-item">窗帘布艺</a>
+            <a href="ceiling.html" class="nav-item">吊顶系列</a>
+            <a href="aluminum.html" class="nav-item">铝合金门窗</a>
+            <a href="#contact" class="nav-item">联系门店</a>
         </div>
     </div>
-
     <div class="banner">
-        <h1>安溪掌尚瓷砖 · 合圣陶瓷工厂直营店</h1>
-        <p>工厂直供400×800/800×800/600×1200/750×1500瓷砖 | 外墙砖·地铺石·仿古砖一站式采购</p>
-        <a href="hs-tile.html" class="btn-gold">查看合圣陶瓷产品图册</a>
+        <h1>安溪掌尚全屋建材一站式直营店</h1>
+        <p>瓷砖·辅料·卫浴·窗帘·吊顶·铝合金门窗全品类供应，免费上门量尺、全屋搭配设计、同城配送</p>
+        <a href="tile.html" class="btn-gold">先查看瓷砖产品图册</a>
     </div>
-
+    <!-- 六大品类快捷入口卡片 -->
     <div class="section">
-        <h2 class="title">产品分类页面直达</h2>
+        <h2 class="title">六大家装品类分类直达</h2>
         <div class="jump-box">
-            <a href="hs-tile.html" class="jump-card">
-                <h3>合圣陶瓷配套砖</h3>
-                <p>400×800 / 800×800 / 600×1200 / 750×1500全规格花色</p>
+            <a href="tile.html" class="jump-card">
+                <h3>瓷砖专区</h3>
+                <p>合圣陶瓷全规格通体砖、外墙砖、地铺石、仿古砖花色图库</p>
                 <span class="btn-gold" style="padding:8px 20px;font-size:14px;">进入图册</span>
             </a>
-            <a href="other-tile.html" class="jump-card">
-                <h3>外墙/地铺/仿古砖</h3>
-                <p>自建房外墙砖、庭院地铺石、复古仿古砖花色图库</p>
+            <a href="accessory.html" class="jump-card">
+                <h3>瓷砖辅料</h3>
+                <p>瓷砖胶、背胶、美缝剂、找平材料、铺贴配件全套辅料</p>
+                <span class="btn-gold" style="padding:8px 20px;font-size:14px;">进入图册</span>
+            </a>
+            <a href="bathroom.html" class="jump-card">
+                <h3>卫浴洁具</h3>
+                <p>马桶、浴室柜、花洒、龙头、五金、淋浴房全套卫浴</p>
+                <span class="btn-gold" style="padding:8px 20px;font-size:14px;">进入图册</span>
+            </a>
+            <a href="curtain.html" class="jump-card">
+                <h3>窗帘布艺</h3>
+                <p>遮光布帘、纱帘、电动轨道、全屋软装窗帘定制</p>
+                <span class="btn-gold" style="padding:8px 20px;font-size:14px;">进入图册</span>
+            </a>
+            <a href="ceiling.html" class="jump-card">
+                <h3>吊顶系列</h3>
+                <p>厨卫铝扣板、蜂窝大板、客厅悬浮吊顶、照明配套</p>
+                <span class="btn-gold" style="padding:8px 20px;font-size:14px;">进入图册</span>
+            </a>
+            <a href="aluminum.html" class="jump-card">
+                <h3>铝合金门窗</h3>
+                <p>断桥平开窗、阳台推拉门、纱窗、极简淋浴房</p>
                 <span class="btn-gold" style="padding:8px 20px;font-size:14px;">进入图册</span>
             </a>
         </div>
     </div>
-
+    <!-- 门店核心优势 -->
     <div class="section" style="background:#fafafa;">
-        <h2 class="title">瓷砖核心优势</h2>
+        <h2 class="title">门店服务优势</h2>
         <div class="advantage-grid">
             <div class="adv-item">
-                <div class="adv-icon">✨</div>
-                <div class="adv-title">高透光瓷胚</div>
-                <div class="adv-desc">高温致密白胚，纹理通透细腻</div>
+                <div class="adv-icon">🏠</div>
+                <div class="adv-title">全屋一站式配齐</div>
+                <div class="adv-desc">瓷砖门窗窗帘吊顶卫浴辅料全部一站式采购</div>
             </div>
             <div class="adv-item">
-                <div class="adv-icon">🎨</div>
-                <div class="adv-title">高纯度原料</div>
-                <div class="adv-desc">色泽纯净，长期不易发灰变色</div>
+                <div class="adv-icon">📐</div>
+                <div class="adv-title">免费上门量尺</div>
+                <div class="adv-desc">专业师傅上门测量，出具完整家装搭配方案</div>
             </div>
             <div class="adv-item">
-                <div class="adv-icon">💪</div>
-                <div class="adv-title">超耐磨釉面</div>
-                <div class="adv-desc">加厚釉层，耐磨耐刮不留痕迹</div>
+                <div class="adv-icon">🚚</div>
+                <div class="adv-title">同城免费配送</div>
+                <div class="adv-desc">安溪全境送货上门，减少搬运损耗</div>
             </div>
             <div class="adv-item">
-                <div class="adv-icon">🎭</div>
-                <div class="adv-title">全风格适配</div>
-                <div class="adv-desc">现代、轻奢、新中式通用</div>
+                <div class="adv-icon">🏬</div>
+                <div class="adv-title">实体门店看样</div>
+                <div class="adv-desc">线下展厅实物展示，无网购色差风险</div>
             </div>
         </div>
     </div>
-
-    <div class="section">
-        <h2 class="title">为什么选择掌尚瓷砖</h2>
-        <ul class="reason-list">
-            <li>合圣陶瓷工厂直营店，省去中间商差价，性价比更高</li>
-            <li>全规格现货，厨卫、客厅、大板配套齐全</li>
-            <li>外墙砖、地铺石、仿古砖多品类一站式采购</li>
-            <li>免费上门量房，专业设计师出具全屋铺贴方案</li>
-            <li>家装、旧房翻新、农村自建房、工程批量供货均可承接</li>
-            <li>安溪本地门店，同城免费送货上门，减少运输损耗</li>
-            <li>线下实体门店可实地看样，杜绝网购色差、品质不符问题</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2 class="title">本地装修实景参考</h2>
-        <div class="case-grid">
-            <div class="case-card">
-                <div class="case-img">
-                    <img src="./img/case_bath.jpg" alt="浴室装修实景">
-                </div>
-                <div class="case-text">
-                    <div class="case-title">厨卫400×800柔光砖完工</div>
-                    <div class="case-desc">干湿分离搭配，防滑耐脏，家用首选。</div>
-                </div>
-            </div>
-            <div class="case-card">
-                <div class="case-img">
-                    <img src="./img/case_living.jpg" alt="客厅大板通铺">
-                </div>
-                <div class="case-text">
-                    <div class="case-title">750×1500大板客厅通铺</div>
-                    <div class="case-desc">无限连纹延伸视觉，大户型简约大气。</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    <!-- 联系我们 -->
     <div class="section contact-box" id="contact">
-        <h2 class="title" style="color:#fff;">到店咨询 实地选砖</h2>
+        <h2 class="title" style="color:#fff;">到店实地选样咨询</h2>
         <div class="contact-grid">
             <div class="contact-item">
                 <h3>咨询电话1</h3>
@@ -458,10 +379,9 @@
         </div>
         <a href="tel:18959938678" class="btn-gold">一键拨号咨询</a>
     </div>
-
     <footer>
-        <p>© 2026 掌尚瓷砖｜安溪合圣陶瓷工厂直营店 版权所有</p>
-        <p>官网首页：index.html | 合圣陶瓷图库：hs-tile.html | 外墙地铺仿古砖图库：other-tile.html</p>
+        <p>© 2026 掌尚全屋建材｜安溪一站式家装直营店 版权所有</p>
+        <p>主营：瓷砖、瓷砖辅料、卫浴洁具、窗帘布艺、吊顶、铝合金门窗</p>
     </footer>
 </body>
 </html>
