@@ -18,18 +18,24 @@
             color: #333;
             background-color: #f8f8f8;
             line-height: 1.7;
+            position: relative;
         }
         a {
             text-decoration: none;
         }
-        /* 顶部导航 LOGO极小 */
+        /* 顶部头部 原有透明滚动逻辑不变 */
         header {
             width: 100%;
-            background: #111;
             padding: 6px 20px;
             position: sticky;
             top: 0;
-            z-index: 999;
+            z-index: 9999;
+            background: transparent;
+            box-shadow: none;
+            transition: all 0.4s ease;
+        }
+        header.bg-dark {
+            background: #111;
             box-shadow: 0 2px 10px rgba(0,0,0,0.15);
         }
         .header-wrap {
@@ -63,36 +69,108 @@
             text-align: right;
             line-height: 1.5;
         }
-        /* 全局分类导航栏 */
-        .page-nav {
-            width:100%;
-            background:#222;
-            padding:10px 20px;
-        }
-        .nav-inner {
-            max-width:1200px;
-            margin:0 auto;
-            display:flex;
-            gap:12px;
-            flex-wrap:wrap;
-        }
-        .nav-item {
-            color:#fff;
-            padding:6px 16px;
+        /* 汉堡菜单按钮 */
+        .menu-btn {
+            width: 40px;
+            height: 40px;
+            background: transparent;
             border:1px solid #d4af37;
-            border-radius:20px;
-            font-size:14px;
+            border-radius:6px;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            gap:5px;
+            cursor:pointer;
+            margin-left:10px;
+        }
+        .menu-btn span {
+            width:22px;
+            height:2px;
+            background:#d4af37;
+            display:block;
+            transition:0.3s;
+        }
+        .header-right-box {
+            display:flex;
+            align-items:center;
+            gap:15px;
+        }
+        /* 侧边遮罩层不变 */
+        .menu-mask {
+            position: fixed;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background:rgba(0,0,0,0.6);
+            z-index:9998;
+            opacity:0;
+            visibility:hidden;
+            transition:0.3s opacity;
+        }
+        .menu-mask.show {
+            opacity:1;
+            visibility:visible;
+        }
+        /* ========== 核心修改：侧边导航栏透明磨砂效果 ========== */
+        .side-nav {
+            position: fixed;
+            top:0;
+            right:-320px;
+            width:300px;
+            height:100%;
+            /* 半透明黑色背景，仅背景透明，文字完全不透明 */
+            background: rgba(26, 26, 26, 0.7);
+            /* 毛玻璃模糊，现代透明质感 */
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index:9999;
+            padding:40px 25px;
+            transition:0.3s right ease;
+        }
+        .side-nav.show {
+            right:0;
+        }
+        .side-close {
+            position:absolute;
+            top:15px;
+            right:20px;
+            color:#fff;
+            font-size:28px;
+            cursor:pointer;
+        }
+        .side-title {
+            color:#d4af37;
+            font-size:20px;
+            padding-bottom:15px;
+            border-bottom:1px solid rgba(255,255,255,0.2);
+            margin-bottom:30px;
+        }
+        .side-nav-list {
+            display:flex;
+            flex-direction:column;
+            gap:16px;
+        }
+        .side-nav-item {
+            display:block;
+            color:#fff;
+            font-size:16px;
+            padding:10px 14px;
+            border:1px solid transparent;
+            border-radius:8px;
             transition:0.2s;
         }
-        .nav-item:hover {
-            background:#d4af37;
-            color:#000;
+        .side-nav-item:hover {
+            border-color:#d4af37;
+            color:#d4af37;
+            background:rgba(255,255,255,0.08);
         }
         /* 横幅 */
         .banner {
             width: 100%;
             background: #111;
-            padding: 80px 20px;
+            padding: 120px 20px 80px;
             text-align: center;
             color: #fff;
         }
@@ -258,6 +336,9 @@
             .section {
                 padding: 40px 15px;
             }
+            .side-nav {
+                width: 260px;
+            }
         }
         img {
             max-width: 100%;
@@ -268,38 +349,52 @@
     </style>
 </head>
 <body id="home">
-    <header>
+    <!-- 顶部头部（逻辑不变，非透明导航） -->
+    <header id="topHeader">
         <div class="header-wrap">
             <a href="index.html" class="logo">
                 <img src="./img/logo.jpg" alt="掌尚瓷砖建材LOGO">
                 <span>掌尚瓷砖建材</span>
             </a>
-            <div class="header-tel">
-                <p>📞 18959938678 / 19559572136</p>
-                <p>📍 安溪凤城镇河滨西路452号（铭选中学对面）</p>
+            <div class="header-right-box">
+                <div class="header-tel">
+                    <p>📞 18959938678 / 19559572136</p>
+                    <p>📍 安溪凤城镇河滨西路452号（铭选中学对面）</p>
+                </div>
+                <!-- 汉堡菜单触发按钮 -->
+                <div class="menu-btn" id="openMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </header>
-    <!-- 六大品类顶部导航 -->
- <div class="page-nav">
-    <div class="nav-inner">
-        <a href="index.html" class="nav-item">首页</a>
-        <a href="cz.html" class="nav-item">瓷砖专区</a>
-        <a href="fl.html" class="nav-item">瓷砖辅料</a>
-        <a href="wy.html" class="nav-item">卫浴洁具</a>
-        <a href="cl.html" class="nav-item">窗帘布艺</a>
-        <a href="dd.html" class="nav-item">吊顶系列</a>
-        <a href="mc.html" class="nav-item">铝合金门窗</a>
-        <a href="#contact" class="nav-item">联系门店</a>
-    </div>
-</div>
+
+    <!-- 侧边遮罩 -->
+    <div class="menu-mask" id="menuMask"></div>
+    <!-- 【透明侧边导航栏】 -->
+    <div class="side-nav" id="sideNav">
+        <div class="side-close" id="closeMenu">×</div>
+        <div class="side-title">全品类产品导航</div>
+        <div class="side-nav-list">
+            <a href="index.html" class="side-nav-item">🏠 首页</a>
+            <a href="cz.html" class="side-nav-item">🧱 瓷砖专区</a>
+            <a href="fl.html" class="side-nav-item">🧴 瓷砖辅料</a>
+            <a href="wy.html" class="side-nav-item">🚿 卫浴洁具</a>
+            <a href="cl.html" class="side-nav-item">🪡 窗帘布艺</a>
+            <a href="dd.html" class="side-nav-item">🔲 吊顶系列</a>
+            <a href="mc.html" class="side-nav-item">🚪 铝合金门窗</a>
+            <a href="#contact" class="side-nav-item">📍 联系门店</a>
         </div>
     </div>
+
     <div class="banner">
         <h1>安溪掌尚瓷砖建材一站式直营店</h1>
         <p>瓷砖·辅料·卫浴·窗帘·吊顶·铝合金门窗全品类供应，免费上门量尺、全屋搭配设计、同城配送</p>
-        <a href="tile.html" class="btn-gold">先查看瓷砖产品图册</a>
+        <a href="cz.html" class="btn-gold">先查看瓷砖产品图册</a>
     </div>
+
     <!-- 六大品类快捷入口卡片 -->
     <div class="section">
         <h2 class="title">六大家装品类分类直达</h2>
@@ -336,6 +431,7 @@
             </a>
         </div>
     </div>
+
     <!-- 门店核心优势 -->
     <div class="section" style="background:#fafafa;">
         <h2 class="title">门店服务优势</h2>
@@ -362,6 +458,7 @@
             </div>
         </div>
     </div>
+
     <!-- 联系我们 -->
     <div class="section contact-box" id="contact">
         <h2 class="title" style="color:#fff;">到店实地选样咨询</h2>
@@ -381,9 +478,43 @@
         </div>
         <a href="tel:18959938678" class="btn-gold">一键拨号咨询</a>
     </div>
+
     <footer>
         <p>© 2026 掌尚瓷砖建材｜安溪一站式家装直营店 版权所有</p>
         <p>主营：瓷砖、瓷砖辅料、卫浴洁具、窗帘布艺、吊顶、铝合金门窗</p>
     </footer>
+
+    <!-- 交互JS不变 -->
+    <script>
+        const openBtn = document.getElementById('openMenu');
+        const closeBtn = document.getElementById('closeMenu');
+        const sideNav = document.getElementById('sideNav');
+        const mask = document.getElementById('menuMask');
+        const navLinks = document.querySelectorAll('.side-nav-item');
+        const headerDom = document.getElementById('topHeader');
+
+        openBtn.addEventListener('click', () => {
+            sideNav.classList.add('show');
+            mask.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        })
+        function closeMenu() {
+            sideNav.classList.remove('show');
+            mask.classList.remove('show');
+            document.body.style.overflow = '';
+        }
+        closeBtn.addEventListener('click', closeMenu);
+        mask.addEventListener('click', closeMenu);
+        navLinks.forEach(link => {
+            link.addEventListener('click', closeMenu)
+        })
+        window.addEventListener('scroll', () => {
+            if(window.scrollY > 80){
+                headerDom.classList.add('bg-dark');
+            }else{
+                headerDom.classList.remove('bg-dark');
+            }
+        })
+    </script>
 </body>
 </html>
