@@ -164,13 +164,28 @@
             color: #d4af37;
             background: rgba(255,255,255,0.08);
         }
-        /* 横幅 增加顶部内边距，避开fixed头部 */
+        /* 横幅：替换背景为门店门头图，覆盖原有纯黑色 */
         .banner {
             width: 100%;
-            background: #111;
+            /* 你的门头高清外链 */
+            background: url("https://bee-reg-ab.imagency.cn/e/06cdd446e817bbc4ca54407a8103fcf5.jpg") center center no-repeat;
+            background-size: cover;
             padding: 140px 20px 80px;
             text-align: center;
             color: #fff;
+            position: relative;
+        }
+        /* 半透明黑色蒙版，防止图片太亮文字看不清 */
+        .banner::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.58);
+            z-index: 1;
+        }
+        .banner > * {
+            position: relative;
+            z-index: 2;
         }
         .banner h1 {
             font-size: 36px;
@@ -332,6 +347,10 @@
             .banner p {
                 font-size: 15px;
             }
+            /* 手机banner高度缩小，图片正常铺满 */
+            .banner {
+                padding: 120px 15px 60px;
+            }
             .advantage-grid,.contact-grid {
                 grid-template-columns: 1fr !important;
             }
@@ -388,6 +407,7 @@
         </div>
     </div>
 
+    <!-- 顶部横幅：门头图全覆盖背景 -->
     <div class="banner">
         <h1>安溪掌尚瓷砖建材一站式直营店</h1>
         <p>瓷砖·辅料·卫浴·窗帘·吊顶·铝合金门窗全品类供应，免费上门量尺、全屋搭配设计、同城配送</p>
@@ -513,7 +533,7 @@
         })
     </script>
 
-    <div style="text-align:center; font-size:13px; line-height:1.8; color:#4b5563;">
+    <div style="text-align:center; font-size:13px; line-height:1.8; color:#4b5563; padding:10px 0;">
   本站由
   <a href="https://www.beeimg.cn/" target="_blank" rel="noopener noreferrer" title="蜜蜂图床" style="text-decoration:none; vertical-align:middle;">
     <img src="https://www.beeimg.cn/favicon.png" alt="蜜蜂图床" style="height:22px; vertical-align:middle; border:0; margin-right:3px;">
