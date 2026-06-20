@@ -290,3 +290,179 @@
                 padding:14px 16px;
             }
         }
+        img {
+            max-width: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部悬浮头部 -->
+    <header id="topHeader">
+        <div class="header-wrap">
+            <a href="index.html" class="logo">
+                <img src="./img/logo.jpg" alt="掌尚瓷砖建材LOGO">
+                <span>掌尚瓷砖建材</span>
+            </a>
+            <div class="header-right-box">
+                <div class="header-tel">
+                    <p>📞 18959938678 / 19559572136</p>
+                    <p>安溪凤城镇河滨西路452号（铭选中学对面）</p>
+                </div>
+                <div class="menu-btn" id="openMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 侧边导航遮罩+面板 -->
+    <div class="menu-mask" id="menuMask"></div>
+    <div class="side-nav" id="sideNav">
+        <div class="side-close" id="closeMenu">×</div>
+        <div class="side-title">全品类产品导航</div>
+        <div class="side-nav-list">
+            <a href="index.html" class="side-nav-item">🏠 首页</a>
+            <a href="cz.html" class="side-nav-item">🧱 瓷砖专区</a>
+            <a href="fl.html" class="side-nav-item">🧴 瓷砖辅料</a>
+            <a href="wy.html" class="side-nav-item">🚿 卫浴洁具</a>
+            <a href="cl.html" class="side-nav-item">🪡 窗帘布艺</a>
+            <a href="dd.html" class="side-nav-item">🔲 吊顶系列</a>
+            <a href="mc.html" class="side-nav-item">🚪 铝合金门窗</a>
+            <a href="#contact" class="side-nav-item">📍 联系门店</a>
+        </div>
+    </div>
+
+    <!-- 主体内容 -->
+    <div class="section">
+        <h2 class="title">卫浴洁具专区｜全套家用卫浴产品图库</h2>
+
+        <!-- 浴室柜（默认展开） -->
+        <div class="brand-panel">
+            <button class="brand-toggle active">
+                浴室柜组合
+                <span class="arrow">∨</span>
+            </button>
+            <div class="brand-content open">
+                <h4 class="sub-title">岩板浴室柜 / 实木防水浴室柜 / 小户型悬挂柜</h4>
+                <div class="gallery-grid">
+                    <div class="gallery-card">
+                        <img class="gallery-thumb" src="./img/wy_ysg01.jpg" alt="极简岩板浴室柜" loading="lazy">
+                        <div class="gallery-name">极简岩板浴室柜</div>
+                    </div>
+                    <div class="gallery-card">
+                        <img class="gallery-thumb" src="./img/wy_ysg02.jpg" alt="实木防水浴室柜" loading="lazy">
+                        <div class="gallery-name">实木防水浴室柜</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 马桶坐便器 -->
+        <div class="brand-panel">
+            <button class="brand-toggle">
+                马桶/坐便器
+                <span class="arrow">∨</span>
+            </button>
+            <div class="brand-content">
+                <h4 class="sub-title">虹吸静音马桶、直冲工程马桶、智能马桶</h4>
+                <div class="gallery-grid">
+                    <div class="gallery-card">
+                        <img class="gallery-thumb" src="./img/wy_mt01.jpg" alt="虹吸静音马桶" loading="lazy">
+                        <div class="gallery-name">虹吸静音马桶</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 花洒龙头 -->
+        <div class="brand-panel">
+            <button class="brand-toggle">
+                花洒 & 冷热龙头
+                <span class="arrow">∨</span>
+            </button>
+            <div class="brand-content">
+                <h4 class="sub-title">恒温淋浴花洒、面盆龙头、厨房龙头</h4>
+                <div class="gallery-grid">
+                    <div class="gallery-card">
+                        <img class="gallery-thumb" src="./img/wy_hh01.jpg" alt="恒温四档花洒" loading="lazy">
+                        <div class="gallery-name">恒温四档淋浴花洒</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 淋浴房五金 -->
+        <div class="brand-panel">
+            <button class="brand-toggle">
+                淋浴房 & 卫浴五金挂件
+                <span class="arrow">∨</span>
+            </button>
+            <div class="brand-content">
+                <h4 class="sub-title">极窄淋浴房、毛巾架、置物架、地漏</h4>
+                <div class="gallery-grid">
+                    <div class="gallery-card">
+                        <img class="gallery-thumb" src="./img/wy_lsp01.jpg" alt="极窄钢化淋浴房" loading="lazy">
+                        <div class="gallery-name">极窄钢化淋浴房</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 掌尚全屋建材｜安溪一站式家装直营店 版权所有</p>
+        <p>
+            <a href="index.html">返回首页</a>
+            | <a href="cz.html">瓷砖专区</a>
+            | <a href="fl.html">瓷砖辅料</a>
+            | <a href="cl.html">窗帘</a>
+            | <a href="dd.html">吊顶</a>
+            | <a href="mc.html">门窗</a>
+        </p>
+    </footer>
+
+    <!-- 交互JS，缺失会菜单无法打开，但不会白屏 -->
+    <script>
+        const openBtn = document.getElementById('openMenu');
+        const closeBtn = document.getElementById('closeMenu');
+        const sideNav = document.getElementById('sideNav');
+        const mask = document.getElementById('menuMask');
+        const navLinks = document.querySelectorAll('.side-nav-item');
+        const headerDom = document.getElementById('topHeader');
+
+        openBtn.addEventListener('click', () => {
+            sideNav.classList.add('show');
+            mask.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        })
+        function closeMenu() {
+            sideNav.classList.remove('show');
+            mask.classList.remove('show');
+            document.body.style.overflow = '';
+        }
+        closeBtn.addEventListener('click', closeMenu);
+        mask.addEventListener('click', closeMenu);
+        navLinks.forEach(link => {
+            link.addEventListener('click', closeMenu)
+        })
+        window.addEventListener('scroll', () => {
+            if(window.scrollY > 100){
+                headerDom.classList.add('bg-light');
+            }else{
+                headerDom.classList.remove('bg-light');
+            }
+        })
+        const brandToggles = document.querySelectorAll('.brand-toggle');
+        brandToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const content = toggle.nextElementSibling;
+                toggle.classList.toggle('active');
+                content.classList.toggle('open');
+            })
+        })
+    </script>
+</body>
+</html>
